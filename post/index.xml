@@ -2,24 +2,40 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on Helge Tester Hugo</title>
-    <link>http://localhost:1313/post/</link>
+    <link>http://sjsd.github.io/post/</link>
     <description>Recent content in Posts on Helge Tester Hugo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>no-nb</language>
-    <lastBuildDate>Wed, 18 Nov 2015 13:54:14 +0100</lastBuildDate>
-    <atom:link href="http://localhost:1313/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 18 Nov 2015 14:56:49 +0100</lastBuildDate>
+    <atom:link href="http://sjsd.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>second</title>
+      <link>http://sjsd.github.io/post/second/</link>
+      <pubDate>Wed, 18 Nov 2015 14:56:49 +0100</pubDate>
+      
+      <guid>http://sjsd.github.io/post/second/</guid>
+      <description>
+
+&lt;h2 id=&#34;test:9f7936f9b5c071ae81db818b80a44a0d&#34;&gt;TEST&lt;/h2&gt;
+
+&lt;p&gt;dfgdkfjgdløsfkgjdsølkdgjfløksgjøflkdfjløjk&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Mitt første innlegg</title>
-      <link>http://localhost:1313/post/first/</link>
+      <link>http://sjsd.github.io/post/first/</link>
       <pubDate>Wed, 18 Nov 2015 13:54:14 +0100</pubDate>
       
-      <guid>http://localhost:1313/post/first/</guid>
+      <guid>http://sjsd.github.io/post/first/</guid>
       <description>
 
 &lt;h2 id=&#34;hei-på-deg:e8fb9c67eba912c72729806db31eaa1b&#34;&gt;Hei på deg!&lt;/h2&gt;
 
 &lt;h3 id=&#34;astronaut-klemte:e8fb9c67eba912c72729806db31eaa1b&#34;&gt;Astronaut klemte&lt;/h3&gt;
+
+&lt;h4 id=&#34;hepp:e8fb9c67eba912c72729806db31eaa1b&#34;&gt;Hepp&lt;/h4&gt;
 
 &lt;p&gt;En kjempegorilla mistet monitoren til grisene. Da banket skuespilleren en annen helt vinglete. En elefant kjøpte seg en varm traktor. En sabeltanntiger assisterte en kamel hastig.&lt;/p&gt;
 
