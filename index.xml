@@ -6,22 +6,8 @@
     <description>Recent content on Helge Tester Hugo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>no-nb</language>
-    <lastBuildDate>Wed, 18 Nov 2015 14:56:49 +0100</lastBuildDate>
+    <lastBuildDate>Wed, 18 Nov 2015 13:54:14 +0100</lastBuildDate>
     <atom:link href="http://sjsd.github.io/index.xml" rel="self" type="application/rss+xml" />
-    
-    <item>
-      <title>second</title>
-      <link>http://sjsd.github.io/post/second/</link>
-      <pubDate>Wed, 18 Nov 2015 14:56:49 +0100</pubDate>
-      
-      <guid>http://sjsd.github.io/post/second/</guid>
-      <description>
-
-&lt;h2 id=&#34;test:9f7936f9b5c071ae81db818b80a44a0d&#34;&gt;TEST&lt;/h2&gt;
-
-&lt;p&gt;Dette er en test.&lt;/p&gt;
-</description>
-    </item>
     
     <item>
       <title>Mitt første innlegg</title>
@@ -50,6 +36,21 @@ Bruktbilselger friserte&lt;/p&gt;
 Juledesigner brølte langt foran en sekk&lt;/p&gt;
 
 &lt;p&gt;Det ble stille og stammelederen viste hvordan den nervøse hobitten fungerte. Åtte kroner måtte en robot betale. 35 urbane bukker møtte 75 blå metallice sabeltanngiraffer. Hekken kom og lyttet. Svart matte kaniner fyllte luften, og en kriger reparerte langt foran en bil. De så sjefen som lekte hensynsløst ganske nært en gjerdestolpe. Sjefshøvdingen felte cowboyen, sauen og soldatene. Plutselig så de 100 maurer som kom ved paraplyen. En huleboer tok så en orange girkasse og kastet den på ei hallodame. En viking mobbet en aspirant med en vimpel.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>second</title>
+      <link>http://sjsd.github.io/post/second/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://sjsd.github.io/post/second/</guid>
+      <description>
+
+&lt;h2 id=&#34;test:9f7936f9b5c071ae81db818b80a44a0d&#34;&gt;TEST&lt;/h2&gt;
+
+&lt;p&gt;Test
+Dette er en test.&lt;/p&gt;
 </description>
     </item>
     
