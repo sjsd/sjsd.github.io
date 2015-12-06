@@ -1,0 +1,121 @@
+body {
+	background-color: #f6f6f6;
+}
+
+.container {
+	background-color: #fff;
+	-webkit-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
+	-moz-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
+	box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
+}
+
+.sjsd-mainimage {
+	padding: 0;
+	margin: 0 0 40px 0;
+}
+
+.sjsd-post {
+	padding-bottom: 26px;
+}
+
+.sjsd-post h1 {
+	font-family: Georgia, serif;
+	font-size: 40px;
+	font-weight: 200;
+	color: rgb(20, 24, 35);
+	line-height: 48px;
+	margin: 0 0 12px 0;
+}
+
+.sjsd-post h2,
+.sjsd-post h3,
+.sjsd-post h4,
+.sjsd-post h5,
+.sjsd-post h6,
+.sjsd-post p,
+.sjsd-post li {
+	font-family: Georgia, serif;
+	font-weight: normal;
+	color: rgb(20, 24, 35);
+	margin-bottom: 14px;
+}
+
+.sjsd-post .byline {
+	color: rgb(145, 151, 163);
+	font-family: helvetica, arial, sans-serif;
+	font-size: 12px;
+	line-height: 1.5;
+	text-transform: uppercase;
+	margin-bottom: 40px;
+}
+
+.sjsd-post h2 {
+	font-size: 36px;
+	line-height: 38px;
+}
+
+.sjsd-post h3 {
+	font-size: 28px;
+	line-height: 32px;
+}
+
+.sjsd-post h4,
+.sjsd-post h5,
+.sjsd-post h6 {
+	font-size: 22px;
+	line-height: 26px;
+}
+
+.sjsd-post p {
+	font-size: 17px;
+	line-height: 28px;
+	margin-bottom: 28px;
+}
+
+.sjsd-post img {
+	width: 100%;
+	height: auto;
+	display: block;
+}
+
+.sjsd-post figure {
+	width: 100%;
+	height: auto;
+	display: block;
+}
+
+.sjsd-post figure img {
+	width: 100%;
+	height: auto;
+	display: block;
+}
+
+.sjsd-post-image {
+	padding: 0;
+	text-align: center;
+}
+
+
+/**/
+.sjsd-posts {
+	padding: 40px 0;
+}
+
+.sjsd-posts h1 {
+	font-family: Georgia, serif;
+	font-size: 40px;
+	font-weight: 200;
+	color: rgb(20, 24, 35);
+	line-height: 48px;
+	margin: 0 0 12px 0;
+}
+
+.sjsd-posts ul,
+.sjsd-posts li {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+
+	font-size: 16px;
+	line-height: 1.6;
+}
