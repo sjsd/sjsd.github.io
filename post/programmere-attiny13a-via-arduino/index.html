@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Programmere ATTiny13a via Arduino &middot; SJSD - blogg og notater om mine DIY </title>
+	<link rel="stylesheet" type="text/css" href="http://sjsd.github.io/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="http://sjsd.github.io/css/screen.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+	<meta name="generator" content="Hugo 0.14" />
+
+	
+	<link href="" rel="alternate" type="application/rss+xml" title="SJSD - blogg og notater om mine DIY" />
+</head>
+
+<body>
+
+	<nav class="navbar navbar-default">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="http://sjsd.github.io/" title="SJSD - blogg og notater om mine DIY">
+					SJSD - blogg og notater om mine DIY
+				</a>
+			</div>
+
+			<div class="collapse navbar-collapse" id="sjsd-navigation">
+				<ul class="nav navbar-nav navbar-right">
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" title="Meny">Meny <span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a href="http://sjsd.github.io/" title="Til forsiden">Forsiden</a></li>
+							
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+	<div class="container">
+		<div class="row">
+
+
+
+
+<div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 sjsd-post">
+	<article>
+		<h1>Programmere ATTiny13a via Arduino</h1>
+		<p class="byline">Skrevet av Helge Johnsen, 27. Sep 2014</p>
+		
+
+<p>Slik kan man programmere en Atmel ATTiny13a via en Arduino. Dette innlegget er mest for min egen del og for at jeg skal huske fremgangsmåten. Men så lenge jeg har et behov for å notere ned mine funn etter mye prøving og feiling så tenker jeg at det er like greit å dele min kunnskap med andre. Målet er å programmere en ATTiny13a ved å bruke en Arduino og Arduino IDE.</p>
+
+<h2 id="last-ned:260bd422fe249ca9139f6224b9b4a288">Last ned</h2>
+
+<p>Last ned nødvendig programvare.</p>
+
+<h3 id="arduino-ide:260bd422fe249ca9139f6224b9b4a288">Arduino IDE</h3>
+
+<p>Last ned versjon 1.0.0 av Arduino IDE <a href="http://arduino.cc/en/Main/OldSoftwareReleases" title="Arduino IDE old releases">http://arduino.cc/en/Main/OldSoftwareReleases</a></p>
+
+<p>Jeg vet ikke årsaken, men jeg prøvde og feilet i lang tid ved å bruke versjon 1.0.5. Hver gang ble kompileringen av de helt enkleste eksempler (Blink) for stor til å laste inn på ATTiny13. Men etter et tips i en annen blogg prøvde jeg versjon 1.0.0 og vips så fikk jeg kompileringen til å bli liten nok til å passe inn på ATTiny13.</p>
+
+<h3 id="attiny:260bd422fe249ca9139f6224b9b4a288">ATTiny</h3>
+
+<p>Arduino IDE har ingen kunnskap om ATTiny13. Så last ned fra GitHub <a href="https://github.com/tekstop/attiny/tree/Arduino1">https://github.com/tekstop/attiny/tree/Arduino1</a></p>
+
+<p>Plasser innholdet i den ZIP-ede filen i mappen hardware i mappen for Arduino IDE. Eksempelvis så ser mappestrukturen min slik ut: c:arduino100/hardware/attiny/ I denne mappen ligger altså filene og mappene fra ZIP-filen.</p>
+
+<h3 id="endring:260bd422fe249ca9139f6224b9b4a288">Endring</h3>
+
+<p>Før du åpner Arduino IDE så må det legges til en liten endring i en fil som heter wiring.c. Denne fila finner du i mappen <em>hardwarearduinocoresarduino</em></p>
+
+<p>På linje (ca 44) legger man til _|| (<strong>AVR_ATtiny13</strong>) _sammen med de andre definisjonene.</p>
+
+<h2 id="oppkobling:260bd422fe249ca9139f6224b9b4a288">Oppkobling</h2>
+
+<p>For at Arduino-en skal kunne programmere brikken så må de kobles sammen. Eksempel: pinne 13 på Arduino til pinne 7 på brikka osv. Se skjemaet og skissen under.</p>
+
+<table>
+
+<tbody>
+
+<tr>
+
+<td>**Arduino**</td>
+
+<td>**ATTiny13a**</td>
+
+</tr>
+
+<tr>
+
+<td>13</td>
+
+<td>7</td>
+
+</tr>
+
+<tr>
+
+<td>12</td>
+
+<td>6</td>
+
+</tr>
+
+<tr>
+
+<td>11</td>
+
+<td>5</td>
+
+</tr>
+
+<tr>
+
+<td>10</td>
+
+<td>1</td>
+
+</tr>
+
+<tr>
+
+<td>5V</td>
+
+<td>8</td>
+
+</tr>
+
+<tr>
+
+<td>GND</td>
+
+<td>4</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+<p><img src="https://helgejohnsen.files.wordpress.com/2014/09/untitled-sketch-2_bb.png?w=560&amp;h=374" alt="Arduino to ATTiny13a" />
+</p>
+
+<h2 id="programmeringen:260bd422fe249ca9139f6224b9b4a288">Programmeringen</h2>
+
+<p>Nå er Arduinoen og brikka koblet opp, bibliotektet for ATTiny13 er lagt til for Arduino IDE og definisjonen for brikka er lagt til i <span class="skimlinks-unlinked">wiring.c-fila</span>. Det er på tide å åpne Arduino IDE og gjøre de innledende innstillinger.</p>
+
+<h3 id="velg-din-arduino-versjon:260bd422fe249ca9139f6224b9b4a288">Velg din Arduino versjon</h3>
+
+<p>Under <em>Tools -&gt; Boards</em> så velg din Arduino. I mitt tilfelle er det Arduino Uno.</p>
+
+<p><img src="https://helgejohnsen.files.wordpress.com/2014/09/27-09-2014-15-15-16.png?w=560&amp;h=857" alt="Arduino IDE - boards" />
+</p>
+
+<h3 id="velg-arduino-som-programmer:260bd422fe249ca9139f6224b9b4a288">Velg Arduino som programmer</h3>
+
+<p>Under <em>Tools -&gt; Programmer</em> så velg <em>Arduino as ISP</em></p>
+
+<p><img src="https://helgejohnsen.files.wordpress.com/2014/09/27-09-2014-15-18-04.png?w=700" alt="Arduino as ISP" />
+</p>
+
+<h3 id="åpne-arduinoisp:260bd422fe249ca9139f6224b9b4a288">Åpne ArduinoISP</h3>
+
+<p>Gå <em>File -&gt; Examples</em> og åpne ArduinoISP</p>
+
+<p><img src="https://helgejohnsen.files.wordpress.com/2014/09/27-09-2014-15-18-041.png?w=700" alt="ArduinoISP" />
+</p>
+
+<p>Last opp ArduinoISP til Arduinoen, Ctrl + U. Nå er Arduinoen klar til å kunne programere ATTiny13a-brikken.</p>
+
+<h2 id="test-med-blink:260bd422fe249ca9139f6224b9b4a288">Test med «Blink»</h2>
+
+<p>For å teste at alt er i orden så kan du koble til en motstand (ca. 200 Ohm) på pinne 3 på brikka, så en LED så til GND.</p>
+
+<p><img src="https://helgejohnsen.files.wordpress.com/2014/09/untitled-sketch-2_bb-led.png?w=560&amp;h=329" alt="Arduino - Attiny13a - LED" />
+</p>
+
+<p>Åpen Blink-eksempelet. Bytt ut utgang 13 med utgang 4. Last så opp programmet ved å bruke <em>File -&gt; Upload Using Programmer</em> (eller Ctrl + Shift + U).</p>
+
+	</article>
+</div>
+
+
+		</div>
+	</div>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	<script type="text/javascript" src="http://sjsd.github.io/scripts/bootstrap.min.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Arduino og Ping (ultrasonisk sensor) &middot; SJSD - blogg og notater om mine DIY </title>
+	<link rel="stylesheet" type="text/css" href="http://sjsd.github.io/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="http://sjsd.github.io/css/screen.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+	<meta name="generator" content="Hugo 0.14" />
+
+	
+	<link href="" rel="alternate" type="application/rss+xml" title="SJSD - blogg og notater om mine DIY" />
+</head>
+
+<body>
+
+	<nav class="navbar navbar-default">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="http://sjsd.github.io/" title="SJSD - blogg og notater om mine DIY">
+					SJSD - blogg og notater om mine DIY
+				</a>
+			</div>
+
+			<div class="collapse navbar-collapse" id="sjsd-navigation">
+				<ul class="nav navbar-nav navbar-right">
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" title="Meny">Meny <span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a href="http://sjsd.github.io/" title="Til forsiden">Forsiden</a></li>
+							
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+	<div class="container">
+		<div class="row">
+
+
+	
+	<div class="col-xs-12 sjsd-mainimage" style="background-image: url(https://helgejohnsen.files.wordpress.com/2015/09/img_20150831_181741.jpg);">
+		
+	</div>
+	
+
+
+
+<div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 sjsd-post">
+	<article>
+		<h1>Arduino og Ping (ultrasonisk sensor)</h1>
+		<p class="byline">Skrevet av Helge Johnsen, 1. Sep 2015</p>
+		
+
+<p>Dette er helt grunnleggende hvordan man kobler opp en Arduino og en Ping. Koden jeg har brukt er basert på standard eksempel fra Arduino. Eneste jeg har gjort er å legge til tre LED som lyser basert på avstand.</p>
+
+<p>Jeg har lånt meg en Ping og satt opp en enkelt test. Dette er en liten del av et litt større prosjekt jeg planlegger. Flere innlegg vil nok komme etter hvert.</p>
+
+<h2 id="tl-dr:b6dccdf5da1a9e2ff64c9d8f617c8f2f">TL;DR</h2>
+
+<p>Når et objekt er lengre unna enn 26 cm så vil grønn LED lyse. Når et objekt er mellom 26 og 10 cm unna så vil orange LED lyse. Hvis et objekt er 10cm eller nærmere så vil rød LED lyse. Avstanden måles med Ping (en ultrasonisk sensor).</p>
+
+<h2 id="skisse:b6dccdf5da1a9e2ff64c9d8f617c8f2f">Skisse</h2>
+
+<p><img src="https://helgejohnsen.files.wordpress.com/2015/09/ping_bb.png?w=700&amp;h=878" alt="Arduino Ping" />
+</p>
+
+<h2 id="kode:b6dccdf5da1a9e2ff64c9d8f617c8f2f">Kode</h2>
+
+<p>Dessverre så får jeg ikke limt inn koden og stilsatt den på en slik måte at den er lettlest. Dette pga restriksjoner knyttet til WordPress (siden jeg ikke hoster WordPress selv). Men jeg har lagt ut koden på Github for den som ønsker å laste den ned.</p>
+
+<p>Se og last ned koden her <a href="https://gist.github.com/sjsd/cf9ea98577b9b277143c">https://gist.github.com/sjsd/cf9ea98577b9b277143c</a></p>
+
+<h2 id="konklusjon:b6dccdf5da1a9e2ff64c9d8f617c8f2f">Konklusjon</h2>
+
+<p>En Ping (eller en ultrasonisk sensor) er en veldig enkelt sak å sette opp. Den jeg har brukt her har tre pinne (en for 5V, jord og signal). Man sender inn et signal og får straks svar tilbake på samme pinne (utgang/inngang på Arduinoen). I koden jeg har brukes inn- utgang 7. Rett etter man har sendt et signal endrer man utgangen til en inngang som er klar for å ta imot signalet.</p>
+
+<p>Med en enkel formel så kan Arduinoen endre svaret til noe mer lesbart, som f.eks. antall centimeter fra Ping-en og til et objekt foran.</p>
+
+<p>Fordelen er at den er enkel å bruke og man kan selv sette terskselverdier for handlinger basert på avstander. Ulempen er at objektet må være rett foran Ping-en. Jeg har gjort noen forsøk på f.eks. å holde et ark i 45 graders vinkel. Da klarer ikke Ping-en å måle avstanden. Antageligvis pga at signalet blir reflektert vekk og ikke tilbake.</p>
+
+<p>Likevel er jeg sikker på at en ultrasonisk sensor er det mest anvendelige i prosjektet mitt.</p>
+
+<p>Ping-en jeg har brukt er en lånt enhet. Selv så venter jeg på en jeg har bestilt billig fra eBay. Den har fire pinner. Forskjellen er at man slipper å endre pinne 7 mellom å sende et signal og ta imot et signal. Man bruker da en egen inngang og en egen utgang for å sende eller motta signal. Ellers er prinsippet det samme.</p>
+
+	</article>
+</div>
+
+
+		</div>
+	</div>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	<script type="text/javascript" src="http://sjsd.github.io/scripts/bootstrap.min.js"></script>
+
+</body>
+</html>

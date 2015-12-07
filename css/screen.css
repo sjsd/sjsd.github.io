@@ -11,10 +11,19 @@ body {
 
 .sjsd-mainimage {
 	padding: 0;
-	margin: 0 0 40px 0;
+	margin: 0;
+
+	width: 100%;
+	padding-bottom: 56.25%;
+
+	overflow: hidden;
+	background-size: cover;
+	background-position: 50% 50%;
+	background-attachment: fixed;
 }
 
 .sjsd-post {
+	padding-top: 40px;
 	padding-bottom: 26px;
 }
 
@@ -83,7 +92,8 @@ body {
 }
 
 .sjsd-post img {
-	width: 100%;
+	max-width: 100%;
+	width: auto;
 	height: auto;
 	display: block;
 }
@@ -98,6 +108,51 @@ body {
 	width: 100%;
 	height: auto;
 	display: block;
+}
+
+.sjsd-post table {
+    border-collapse: collapse;
+    border-spacing: 0;	
+}
+
+.sjsd-post table {
+    border-radius: 0;
+    margin-bottom: 1rem;
+    width: 100%;
+}
+.sjsd-post thead,
+.sjsd-post tbody,
+.sjsd-post tfoot {
+    background-color: #fefefe;
+    border: 1px solid #f1f1f1;
+}
+.sjsd-post caption {
+    font-weight: bold;
+    padding: 0.5rem 0.625rem 0.625rem;
+}
+.sjsd-post thead,
+.sjsd-post tfoot {
+    background: #f8f8f8 none repeat scroll 0 0;
+    color: #0a0a0a;
+}
+.sjsd-post thead tr,
+.sjsd-post tfoot tr {
+    background: transparent none repeat scroll 0 0;
+}
+.sjsd-post thead th,
+.sjsd-post thead td,
+.sjsd-post tfoot th,
+.sjsd-post tfoot td {
+    font-weight: bold;
+    padding: 0.5rem 0.625rem 0.625rem;
+    text-align: left;
+}
+.sjsd-post tbody tr:nth-child(2n) {
+    background-color: #f1f1f1;
+}
+.sjsd-post tbody th,
+.sjsd-post tbody td {
+    padding: 0.5rem 0.625rem 0.625rem;
 }
 
 .sjsd-post-image {
@@ -137,4 +192,18 @@ body {
 
 	font-size: 16px;
 	line-height: 1.6;
+}
+
+/* Some old fun from Wordpress */
+.block-message {
+	display: block;
+	font-size: 17px;
+	line-height: 28px;
+	margin-bottom: 28px;
+
+	border: 1px solid rgba(10, 10, 10, 0.25);
+	border-radius: 0;
+	padding: 16px;
+
+	background-color: #ebebeb;
 }

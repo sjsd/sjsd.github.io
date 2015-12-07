@@ -266,5 +266,434 @@
 </description>
     </item>
     
+    <item>
+      <title>Arduino og HC-SR04 (ultrasonisk sensor)</title>
+      <link>http://sjsd.github.io/post/arduino-og-hc-sr04-ultrasonisk-sensor/</link>
+      <pubDate>Thu, 03 Sep 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://sjsd.github.io/post/arduino-og-hc-sr04-ultrasonisk-sensor/</guid>
+      <description>
+
+&lt;p&gt;Dette innlegget er neste identisk med mitt innlegg &lt;a href=&#34;https://helgejohnsen.wordpress.com/2015/09/01/arduino-og-ping-ultrasonisk-sensor/&#34;&gt;Arduino og Ping (ultrasonisk sensor)&lt;/a&gt;. Eneste forskjellen er bytte av sen ultrasoniske sensoren. Både Ping oh HC-SR04 er populære sensorer å koble til Arduino. I bunn og grunn helt like produkter men med en stor forskjell – antall pinner. Ping har 3 mens HC-SR04 har 4 pinner. Derfor blir koblingskjemaet og koden bittelitt forskjellig.&lt;/p&gt;
+
+&lt;h2 id=&#34;tl-dr:7184f21ca1b74fa43e589a2770b7345e&#34;&gt;TL;DR&lt;/h2&gt;
+
+&lt;p&gt;En ultrasonisk sensor måler avstanden til et objekt. Basert på avstanden så vil tre ulike LED lyse opp. Grønn LED lyser ved avstand over 25cm. Orange LED lyser ved avstand mellom 10 og 25 cm. Rød LED lyser ved avstand under 10 cm.&lt;/p&gt;
+
+&lt;h2 id=&#34;skisse:7184f21ca1b74fa43e589a2770b7345e&#34;&gt;Skisse&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://helgejohnsen.files.wordpress.com/2015/09/hcsr04-2_bb.png&#34;&gt;&lt;img src=&#34;https://helgejohnsen.files.wordpress.com/2015/09/hcsr04-2_bb.png?w=700&amp;amp;h=361&#34; alt=&#34;hcsr04-2_bb&#34; /&gt;
+&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;hc-sr04:7184f21ca1b74fa43e589a2770b7345e&#34;&gt;HC-SR04&lt;/h2&gt;
+
+&lt;p&gt;HC-SR04 har 4 pinner:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;VCC – 5V (positiv)&lt;/li&gt;
+&lt;li&gt;Trig – signal inn fra Arduino (trigger)&lt;/li&gt;
+&lt;li&gt;Echo – signal ut fra&lt;/li&gt;
+&lt;li&gt;Gnd – jord (negativ)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Fordelen med fire pinner er at programmet til Arduinoen slipper å skifte mellom inn- og utgang på samme pinne.&lt;/p&gt;
+
+&lt;h2 id=&#34;konklusjon:7184f21ca1b74fa43e589a2770b7345e&#34;&gt;Konklusjon&lt;/h2&gt;
+
+&lt;p&gt;En HC-SR04 er like enkelt å sette opp og bruke som en Ping. Er man nybegynner så er det kanskje lettere å forstå programeringen med 4 pinner kontra 3 pinner. Man sender inn et signal og får straks svar tilbake på den andre pinnen.&lt;/p&gt;
+
+&lt;p&gt;Med en enkel formel så kan Arduinoen endre svaret til noe mer lesbart, som f.eks. antall centimeter fra Ping-en og til et objekt foran.&lt;/p&gt;
+
+&lt;p&gt;Fordelen er at den er enkel å bruke og man kan selv sette terskselverdier for handlinger basert på avstander. Ulempen er at objektet må være rett foran Ping-en. Jeg har gjort noen forsøk på f.eks. å holde et ark i 45 graders vinkel. Da klarer ikke Ping-en å måle avstanden. Antageligvis pga at signalet blir reflektert vekk og ikke tilbake.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Arduino og Ping (ultrasonisk sensor)</title>
+      <link>http://sjsd.github.io/post/arduino-og-ping-ultrasonisk-sensor/</link>
+      <pubDate>Tue, 01 Sep 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://sjsd.github.io/post/arduino-og-ping-ultrasonisk-sensor/</guid>
+      <description>
+
+&lt;p&gt;Dette er helt grunnleggende hvordan man kobler opp en Arduino og en Ping. Koden jeg har brukt er basert på standard eksempel fra Arduino. Eneste jeg har gjort er å legge til tre LED som lyser basert på avstand.&lt;/p&gt;
+
+&lt;p&gt;Jeg har lånt meg en Ping og satt opp en enkelt test. Dette er en liten del av et litt større prosjekt jeg planlegger. Flere innlegg vil nok komme etter hvert.&lt;/p&gt;
+
+&lt;h2 id=&#34;tl-dr:b6dccdf5da1a9e2ff64c9d8f617c8f2f&#34;&gt;TL;DR&lt;/h2&gt;
+
+&lt;p&gt;Når et objekt er lengre unna enn 26 cm så vil grønn LED lyse. Når et objekt er mellom 26 og 10 cm unna så vil orange LED lyse. Hvis et objekt er 10cm eller nærmere så vil rød LED lyse. Avstanden måles med Ping (en ultrasonisk sensor).&lt;/p&gt;
+
+&lt;h2 id=&#34;skisse:b6dccdf5da1a9e2ff64c9d8f617c8f2f&#34;&gt;Skisse&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://helgejohnsen.files.wordpress.com/2015/09/ping_bb.png?w=700&amp;amp;h=878&#34; alt=&#34;Arduino Ping&#34; /&gt;
+&lt;/p&gt;
+
+&lt;h2 id=&#34;kode:b6dccdf5da1a9e2ff64c9d8f617c8f2f&#34;&gt;Kode&lt;/h2&gt;
+
+&lt;p&gt;Dessverre så får jeg ikke limt inn koden og stilsatt den på en slik måte at den er lettlest. Dette pga restriksjoner knyttet til WordPress (siden jeg ikke hoster WordPress selv). Men jeg har lagt ut koden på Github for den som ønsker å laste den ned.&lt;/p&gt;
+
+&lt;p&gt;Se og last ned koden her &lt;a href=&#34;https://gist.github.com/sjsd/cf9ea98577b9b277143c&#34;&gt;https://gist.github.com/sjsd/cf9ea98577b9b277143c&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;konklusjon:b6dccdf5da1a9e2ff64c9d8f617c8f2f&#34;&gt;Konklusjon&lt;/h2&gt;
+
+&lt;p&gt;En Ping (eller en ultrasonisk sensor) er en veldig enkelt sak å sette opp. Den jeg har brukt her har tre pinne (en for 5V, jord og signal). Man sender inn et signal og får straks svar tilbake på samme pinne (utgang/inngang på Arduinoen). I koden jeg har brukes inn- utgang 7. Rett etter man har sendt et signal endrer man utgangen til en inngang som er klar for å ta imot signalet.&lt;/p&gt;
+
+&lt;p&gt;Med en enkel formel så kan Arduinoen endre svaret til noe mer lesbart, som f.eks. antall centimeter fra Ping-en og til et objekt foran.&lt;/p&gt;
+
+&lt;p&gt;Fordelen er at den er enkel å bruke og man kan selv sette terskselverdier for handlinger basert på avstander. Ulempen er at objektet må være rett foran Ping-en. Jeg har gjort noen forsøk på f.eks. å holde et ark i 45 graders vinkel. Da klarer ikke Ping-en å måle avstanden. Antageligvis pga at signalet blir reflektert vekk og ikke tilbake.&lt;/p&gt;
+
+&lt;p&gt;Likevel er jeg sikker på at en ultrasonisk sensor er det mest anvendelige i prosjektet mitt.&lt;/p&gt;
+
+&lt;p&gt;Ping-en jeg har brukt er en lånt enhet. Selv så venter jeg på en jeg har bestilt billig fra eBay. Den har fire pinner. Forskjellen er at man slipper å endre pinne 7 mellom å sende et signal og ta imot et signal. Man bruker da en egen inngang og en egen utgang for å sende eller motta signal. Ellers er prinsippet det samme.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Legg til hendeslessporing for Google Analytics til Ninja Blocks</title>
+      <link>http://sjsd.github.io/post/legg-til-hendeslessporing-for-google-analytics-til-ninja-block/</link>
+      <pubDate>Mon, 22 Dec 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://sjsd.github.io/post/legg-til-hendeslessporing-for-google-analytics-til-ninja-block/</guid>
+      <description>
+
+&lt;p&gt;Google Analytics (GA) har mulighet for å legge til sporing av enten sidevisning eller hendelse via en egen måleprotokoll (&lt;a href=&#34;https://developers.google.com/analytics/devguides/collection/protocol/v1/&#34; title=&#34;Google Analytics Measurement Protocol&#34;&gt;Measurement Protocol&lt;/a&gt;). Kort fortalt så spores sider og hendelser via javascript. Men ved å sende en forespørsel til en egen URL til GA så kan man sende inn sporinger uten javascript. Her skal jeg forsøke å beskrive hvordan man setter opp en slik URL og hvordan jeg bruker den sammen med Ninja Blocks.&lt;/p&gt;
+
+&lt;div class=&#34;block-message info&#34;&gt;
+
+**TL;DR**
+
+Ved å legge til en webhook for Ninja Blocks kan man legge til sporing i Google Analytics. Legg til &lt;span class=&#34;skimlinks-unlinked&#34;&gt;http://www.google-analytics.com/collect&lt;/span&gt; som URI og eksempelvis v=1&amp;tid=UA-XXX-Y&amp;cid=555&amp;t=event&amp;ec=Bevegelse&amp;ea=Åpnet&amp;el=Ytterdør som POST data. Opprett så en regel som utfører sporingen.
+
+&lt;/div&gt;
+
+&lt;h2 id=&#34;google-analytics:e9020054e4ab7898b92cda096749c59b&#34;&gt;Google Analytics&lt;/h2&gt;
+
+&lt;h3 id=&#34;grunnleggende:e9020054e4ab7898b92cda096749c59b&#34;&gt;Grunnleggende&lt;/h3&gt;
+
+&lt;p&gt;Først må man opprette en GA-konto (noe jeg regner med at du allerede har) og finne sporings-IDen. Sporings-IDen ser typisk slik ut UA-12345678-9. Så må man bygge opp URL-en man skal sende et kall til. URL-en må se slik ut (&lt;a href=&#34;https://developers.google.com/analytics/devguides/collection/protocol/v1/devguide#required&#34; title=&#34;Sending Required Values&#34;&gt;dette er minstekravet&lt;/a&gt;): &lt;a href=&#34;http://www.google-analytics.com/collect?v=1&amp;amp;tid=UA-XXXX-Y&amp;amp;cid=555&amp;amp;t=pageview&#34;&gt;http://www.google-analytics.com/collect?v=1&amp;amp;tid=UA-XXXX-Y&amp;amp;cid=555&amp;amp;t=pageview&lt;/a&gt;&lt;br /&gt;
+Hvis vi bryter den ned litt så ser vi hvilken elementer URL-en består av&lt;/p&gt;
+
+&lt;table class=&#34;lensTable&#34;&gt;
+
+&lt;thead&gt;
+
+&lt;tr&gt;
+
+&lt;th&gt;Element&lt;/th&gt;
+
+&lt;th&gt;Forklaring&lt;/th&gt;
+
+&lt;/tr&gt;
+
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+
+&lt;tr&gt;
+
+&lt;td&gt;[http://www.google-analytics.com/collect](http://www.google-analytics.com/collect)&lt;/td&gt;
+
+&lt;td&gt;URL&lt;/td&gt;
+
+&lt;/tr&gt;
+
+&lt;tr&gt;
+
+&lt;td&gt;v=1&lt;/td&gt;
+
+&lt;td&gt;Versjon (i skrivende stund 1)&lt;/td&gt;
+
+&lt;/tr&gt;
+
+&lt;tr&gt;
+
+&lt;td&gt;tid=UA-XXX-Y&lt;/td&gt;
+
+&lt;td&gt;Bytt ut UA-XXX-Y med din sporings-ID&lt;/td&gt;
+
+&lt;/tr&gt;
+
+&lt;tr&gt;
+
+&lt;td&gt;cid=555&lt;/td&gt;
+
+&lt;td&gt;Tillater anonym sporing&lt;/td&gt;
+
+&lt;/tr&gt;
+
+&lt;tr&gt;
+
+&lt;td&gt;t=pageview&lt;/td&gt;
+
+&lt;td&gt;Type sporing (pageview eller event)&lt;/td&gt;
+
+&lt;/tr&gt;
+
+&lt;/tbody&gt;
+
+&lt;/table&gt;
+
+&lt;h3 id=&#34;hendelsessporing:e9020054e4ab7898b92cda096749c59b&#34;&gt;Hendelsessporing&lt;/h3&gt;
+
+&lt;p&gt;For å spore en spesiell hendelse så trenger vi å legge til noen ekstra parametere. Målet mitt er å registrere en spesifikk hendelse som jeg sendere skal bruke med min Ninja Blocks. Derfor legger jeg til følgende elementer i URL-en:&lt;/p&gt;
+
+&lt;table class=&#34;lensTable&#34;&gt;
+
+&lt;thead&gt;
+
+&lt;tr&gt;
+
+&lt;th&gt;Element&lt;/th&gt;
+
+&lt;th&gt;Forklaring&lt;/th&gt;
+
+&lt;/tr&gt;
+
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+
+&lt;tr&gt;
+
+&lt;td&gt;[http://www.google-analytics.com/collect](http://www.google-analytics.com/collect)&lt;/td&gt;
+
+&lt;td&gt;URL&lt;/td&gt;
+
+&lt;/tr&gt;
+
+&lt;tr&gt;
+
+&lt;td&gt;v=1&lt;/td&gt;
+
+&lt;td&gt;Versjon (i skrivende stund 1)&lt;/td&gt;
+
+&lt;/tr&gt;
+
+&lt;tr&gt;
+
+&lt;td&gt;tid=UA-XXX-Y&lt;/td&gt;
+
+&lt;td&gt;Bytt ut UA-XXX-Y med din sporings-ID&lt;/td&gt;
+
+&lt;/tr&gt;
+
+&lt;tr&gt;
+
+&lt;td&gt;cid=555&lt;/td&gt;
+
+&lt;td&gt;Tillater anonym sporing&lt;/td&gt;
+
+&lt;/tr&gt;
+
+&lt;tr&gt;
+
+&lt;td&gt;t=event&lt;/td&gt;
+
+&lt;td&gt;Type sporing (pageview eller event)&lt;/td&gt;
+
+&lt;/tr&gt;
+
+&lt;tr&gt;
+
+&lt;td&gt;ec=Bevegelse&lt;/td&gt;
+
+&lt;td&gt;Hendelseskategori&lt;/td&gt;
+
+&lt;/tr&gt;
+
+&lt;tr&gt;
+
+&lt;td&gt;ea=Åpnet&lt;/td&gt;
+
+&lt;td&gt;Handling&lt;/td&gt;
+
+&lt;/tr&gt;
+
+&lt;tr&gt;
+
+&lt;td&gt;el=Ytterdør&lt;/td&gt;
+
+&lt;td&gt;Hendelsesetikett&lt;/td&gt;
+
+&lt;/tr&gt;
+
+&lt;/tbody&gt;
+
+&lt;/table&gt;
+
+&lt;p&gt;Som du ser så har jeg lagt til noen nye elementer. Disse er kategori, handling og etikett. Så min komplette URL er nå ferdig og jeg kan teste den direkte i nettleseren for å se at sporingen blir slik jeg ønsker i GA.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://www.google-analytics.com/collect?v=1&amp;amp;tid=UA-XXX-Y&amp;amp;cid=555&amp;amp;t=event&amp;amp;ec=Bevegelse&amp;amp;ea=Åpnet&amp;amp;el=Ytterdør&#34;&gt;http://www.google-analytics.com/collect?v=1&amp;amp;tid=UA-XXX-Y&amp;amp;cid=555&amp;amp;t=event&amp;amp;ec=Bevegelse&amp;amp;ea=Åpnet&amp;amp;el=Ytterdør&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;ninja-blocks-webhook:e9020054e4ab7898b92cda096749c59b&#34;&gt;Ninja Blocks Webhook&lt;/h2&gt;
+
+&lt;p&gt;For Ninja Blocks kan man legge til noe de kaller for en webhook. Jeg vet ikke om noen god norsk oversettelse av ordet webhook, så jeg bruker det engelske ordet. Da kan man benytte denne som en del av et regelsett. Jeg regner med at du er kjent med Ninja Blocks og hvordan opprette en regel.&lt;/p&gt;
+
+&lt;p&gt;Hvis du ikke har aktivert webhook så gå til &lt;a href=&#34;http://help.ninjablocks.com/customer/portal/articles/683991-webhooks&#34; title=&#34;Ninja Blocks Webhooks&#34;&gt;Settings –&amp;gt; Sevices og aktiver Webhook&lt;/a&gt;. Nå vil det dukke opp et nytt element på forsiden hvor man kan administrere webhook-er.&lt;/p&gt;
+
+&lt;h3 id=&#34;opprett-webhook:e9020054e4ab7898b92cda096749c59b&#34;&gt;Opprett webhook&lt;/h3&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Trykk på «Add a webhook»&lt;/li&gt;
+&lt;li&gt;Velg så «Outbound Webhook (Actuator)» i nedtrekksmenyen&lt;/li&gt;
+&lt;li&gt;Gi den et navn, f.eks «GA – Ytterdør»&lt;/li&gt;
+&lt;li&gt;Legg til «Webhook URI»:&lt;br /&gt;
+&lt;a href=&#34;http://www.google-analytics.com/collect&#34;&gt;http://www.google-analytics.com/collect&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;I feltet «POST data» legges resten av URL-en til:&lt;br /&gt;
+v=1&amp;amp;tid=UA-XXX-Y&amp;amp;cid=555&amp;amp;t=event&amp;amp;ec=Bevegelse&amp;amp;ea=Åpnet&amp;amp;el=Ytterdør&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Merk at spørsmålstegnet før v=1 ikke er med på punkt 5.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://helgejohnsen.files.wordpress.com/2014/12/webhook-ga.png?w=700&#34; alt=&#34;Ninja Blocks webhook GA&#34; /&gt;
+&lt;br /&gt;
+&lt;em&gt;Skjermbilde av opprettelse av en webook.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Etter at webhooken er opprettet så må man lage en regel som kjører webhooken ved en eller annen hendelse. I mitt tilfelle har jeg en trådløs dørsensor. Hver gang døren åpnes så registreres det som en hendelse (event) i GA.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Programmere ATTiny13a via Arduino</title>
+      <link>http://sjsd.github.io/post/programmere-attiny13a-via-arduino/</link>
+      <pubDate>Sat, 27 Sep 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://sjsd.github.io/post/programmere-attiny13a-via-arduino/</guid>
+      <description>
+
+&lt;p&gt;Slik kan man programmere en Atmel ATTiny13a via en Arduino. Dette innlegget er mest for min egen del og for at jeg skal huske fremgangsmåten. Men så lenge jeg har et behov for å notere ned mine funn etter mye prøving og feiling så tenker jeg at det er like greit å dele min kunnskap med andre. Målet er å programmere en ATTiny13a ved å bruke en Arduino og Arduino IDE.&lt;/p&gt;
+
+&lt;h2 id=&#34;last-ned:260bd422fe249ca9139f6224b9b4a288&#34;&gt;Last ned&lt;/h2&gt;
+
+&lt;p&gt;Last ned nødvendig programvare.&lt;/p&gt;
+
+&lt;h3 id=&#34;arduino-ide:260bd422fe249ca9139f6224b9b4a288&#34;&gt;Arduino IDE&lt;/h3&gt;
+
+&lt;p&gt;Last ned versjon 1.0.0 av Arduino IDE &lt;a href=&#34;http://arduino.cc/en/Main/OldSoftwareReleases&#34; title=&#34;Arduino IDE old releases&#34;&gt;http://arduino.cc/en/Main/OldSoftwareReleases&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Jeg vet ikke årsaken, men jeg prøvde og feilet i lang tid ved å bruke versjon 1.0.5. Hver gang ble kompileringen av de helt enkleste eksempler (Blink) for stor til å laste inn på ATTiny13. Men etter et tips i en annen blogg prøvde jeg versjon 1.0.0 og vips så fikk jeg kompileringen til å bli liten nok til å passe inn på ATTiny13.&lt;/p&gt;
+
+&lt;h3 id=&#34;attiny:260bd422fe249ca9139f6224b9b4a288&#34;&gt;ATTiny&lt;/h3&gt;
+
+&lt;p&gt;Arduino IDE har ingen kunnskap om ATTiny13. Så last ned fra GitHub &lt;a href=&#34;https://github.com/tekstop/attiny/tree/Arduino1&#34;&gt;https://github.com/tekstop/attiny/tree/Arduino1&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Plasser innholdet i den ZIP-ede filen i mappen hardware i mappen for Arduino IDE. Eksempelvis så ser mappestrukturen min slik ut: c:arduino100/hardware/attiny/ I denne mappen ligger altså filene og mappene fra ZIP-filen.&lt;/p&gt;
+
+&lt;h3 id=&#34;endring:260bd422fe249ca9139f6224b9b4a288&#34;&gt;Endring&lt;/h3&gt;
+
+&lt;p&gt;Før du åpner Arduino IDE så må det legges til en liten endring i en fil som heter wiring.c. Denne fila finner du i mappen &lt;em&gt;hardwarearduinocoresarduino&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;På linje (ca 44) legger man til _|| (&lt;strong&gt;AVR_ATtiny13&lt;/strong&gt;) _sammen med de andre definisjonene.&lt;/p&gt;
+
+&lt;h2 id=&#34;oppkobling:260bd422fe249ca9139f6224b9b4a288&#34;&gt;Oppkobling&lt;/h2&gt;
+
+&lt;p&gt;For at Arduino-en skal kunne programmere brikken så må de kobles sammen. Eksempel: pinne 13 på Arduino til pinne 7 på brikka osv. Se skjemaet og skissen under.&lt;/p&gt;
+
+&lt;table&gt;
+
+&lt;tbody&gt;
+
+&lt;tr&gt;
+
+&lt;td&gt;**Arduino**&lt;/td&gt;
+
+&lt;td&gt;**ATTiny13a**&lt;/td&gt;
+
+&lt;/tr&gt;
+
+&lt;tr&gt;
+
+&lt;td&gt;13&lt;/td&gt;
+
+&lt;td&gt;7&lt;/td&gt;
+
+&lt;/tr&gt;
+
+&lt;tr&gt;
+
+&lt;td&gt;12&lt;/td&gt;
+
+&lt;td&gt;6&lt;/td&gt;
+
+&lt;/tr&gt;
+
+&lt;tr&gt;
+
+&lt;td&gt;11&lt;/td&gt;
+
+&lt;td&gt;5&lt;/td&gt;
+
+&lt;/tr&gt;
+
+&lt;tr&gt;
+
+&lt;td&gt;10&lt;/td&gt;
+
+&lt;td&gt;1&lt;/td&gt;
+
+&lt;/tr&gt;
+
+&lt;tr&gt;
+
+&lt;td&gt;5V&lt;/td&gt;
+
+&lt;td&gt;8&lt;/td&gt;
+
+&lt;/tr&gt;
+
+&lt;tr&gt;
+
+&lt;td&gt;GND&lt;/td&gt;
+
+&lt;td&gt;4&lt;/td&gt;
+
+&lt;/tr&gt;
+
+&lt;/tbody&gt;
+
+&lt;/table&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://helgejohnsen.files.wordpress.com/2014/09/untitled-sketch-2_bb.png?w=560&amp;amp;h=374&#34; alt=&#34;Arduino to ATTiny13a&#34; /&gt;
+&lt;/p&gt;
+
+&lt;h2 id=&#34;programmeringen:260bd422fe249ca9139f6224b9b4a288&#34;&gt;Programmeringen&lt;/h2&gt;
+
+&lt;p&gt;Nå er Arduinoen og brikka koblet opp, bibliotektet for ATTiny13 er lagt til for Arduino IDE og definisjonen for brikka er lagt til i &lt;span class=&#34;skimlinks-unlinked&#34;&gt;wiring.c-fila&lt;/span&gt;. Det er på tide å åpne Arduino IDE og gjøre de innledende innstillinger.&lt;/p&gt;
+
+&lt;h3 id=&#34;velg-din-arduino-versjon:260bd422fe249ca9139f6224b9b4a288&#34;&gt;Velg din Arduino versjon&lt;/h3&gt;
+
+&lt;p&gt;Under &lt;em&gt;Tools -&amp;gt; Boards&lt;/em&gt; så velg din Arduino. I mitt tilfelle er det Arduino Uno.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://helgejohnsen.files.wordpress.com/2014/09/27-09-2014-15-15-16.png?w=560&amp;amp;h=857&#34; alt=&#34;Arduino IDE - boards&#34; /&gt;
+&lt;/p&gt;
+
+&lt;h3 id=&#34;velg-arduino-som-programmer:260bd422fe249ca9139f6224b9b4a288&#34;&gt;Velg Arduino som programmer&lt;/h3&gt;
+
+&lt;p&gt;Under &lt;em&gt;Tools -&amp;gt; Programmer&lt;/em&gt; så velg &lt;em&gt;Arduino as ISP&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://helgejohnsen.files.wordpress.com/2014/09/27-09-2014-15-18-04.png?w=700&#34; alt=&#34;Arduino as ISP&#34; /&gt;
+&lt;/p&gt;
+
+&lt;h3 id=&#34;åpne-arduinoisp:260bd422fe249ca9139f6224b9b4a288&#34;&gt;Åpne ArduinoISP&lt;/h3&gt;
+
+&lt;p&gt;Gå &lt;em&gt;File -&amp;gt; Examples&lt;/em&gt; og åpne ArduinoISP&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://helgejohnsen.files.wordpress.com/2014/09/27-09-2014-15-18-041.png?w=700&#34; alt=&#34;ArduinoISP&#34; /&gt;
+&lt;/p&gt;
+
+&lt;p&gt;Last opp ArduinoISP til Arduinoen, Ctrl + U. Nå er Arduinoen klar til å kunne programere ATTiny13a-brikken.&lt;/p&gt;
+
+&lt;h2 id=&#34;test-med-blink:260bd422fe249ca9139f6224b9b4a288&#34;&gt;Test med «Blink»&lt;/h2&gt;
+
+&lt;p&gt;For å teste at alt er i orden så kan du koble til en motstand (ca. 200 Ohm) på pinne 3 på brikka, så en LED så til GND.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://helgejohnsen.files.wordpress.com/2014/09/untitled-sketch-2_bb-led.png?w=560&amp;amp;h=329&#34; alt=&#34;Arduino - Attiny13a - LED&#34; /&gt;
+&lt;/p&gt;
+
+&lt;p&gt;Åpen Blink-eksempelet. Bytt ut utgang 13 med utgang 4. Last så opp programmet ved å bruke &lt;em&gt;File -&amp;gt; Upload Using Programmer&lt;/em&gt; (eller Ctrl + Shift + U).&lt;/p&gt;
+</description>
+    </item>
+    
   </channel>
 </rss>

@@ -780,5 +780,254 @@
 </description>
     </item>
     
+    <item>
+      <title>Arduino og HC-SR04 (ultrasonisk sensor)</title>
+      <link>http://sjsd.github.io/post/arduino-og-hc-sr04-ultrasonisk-sensor/</link>
+      <pubDate>Thu, 03 Sep 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://sjsd.github.io/post/arduino-og-hc-sr04-ultrasonisk-sensor/</guid>
+      <description>
+
+&lt;p&gt;Dette innlegget er neste identisk med mitt innlegg &lt;a href=&#34;https://helgejohnsen.wordpress.com/2015/09/01/arduino-og-ping-ultrasonisk-sensor/&#34;&gt;Arduino og Ping (ultrasonisk sensor)&lt;/a&gt;. Eneste forskjellen er bytte av sen ultrasoniske sensoren. Både Ping oh HC-SR04 er populære sensorer å koble til Arduino. I bunn og grunn helt like produkter men med en stor forskjell – antall pinner. Ping har 3 mens HC-SR04 har 4 pinner. Derfor blir koblingskjemaet og koden bittelitt forskjellig.&lt;/p&gt;
+
+&lt;h2 id=&#34;tl-dr:7184f21ca1b74fa43e589a2770b7345e&#34;&gt;TL;DR&lt;/h2&gt;
+
+&lt;p&gt;En ultrasonisk sensor måler avstanden til et objekt. Basert på avstanden så vil tre ulike LED lyse opp. Grønn LED lyser ved avstand over 25cm. Orange LED lyser ved avstand mellom 10 og 25 cm. Rød LED lyser ved avstand under 10 cm.&lt;/p&gt;
+
+&lt;h2 id=&#34;skisse:7184f21ca1b74fa43e589a2770b7345e&#34;&gt;Skisse&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://helgejohnsen.files.wordpress.com/2015/09/hcsr04-2_bb.png&#34;&gt;&lt;img src=&#34;https://helgejohnsen.files.wordpress.com/2015/09/hcsr04-2_bb.png?w=700&amp;amp;h=361&#34; alt=&#34;hcsr04-2_bb&#34; /&gt;
+&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;hc-sr04:7184f21ca1b74fa43e589a2770b7345e&#34;&gt;HC-SR04&lt;/h2&gt;
+
+&lt;p&gt;HC-SR04 har 4 pinner:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;VCC – 5V (positiv)&lt;/li&gt;
+&lt;li&gt;Trig – signal inn fra Arduino (trigger)&lt;/li&gt;
+&lt;li&gt;Echo – signal ut fra&lt;/li&gt;
+&lt;li&gt;Gnd – jord (negativ)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Fordelen med fire pinner er at programmet til Arduinoen slipper å skifte mellom inn- og utgang på samme pinne.&lt;/p&gt;
+
+&lt;h2 id=&#34;konklusjon:7184f21ca1b74fa43e589a2770b7345e&#34;&gt;Konklusjon&lt;/h2&gt;
+
+&lt;p&gt;En HC-SR04 er like enkelt å sette opp og bruke som en Ping. Er man nybegynner så er det kanskje lettere å forstå programeringen med 4 pinner kontra 3 pinner. Man sender inn et signal og får straks svar tilbake på den andre pinnen.&lt;/p&gt;
+
+&lt;p&gt;Med en enkel formel så kan Arduinoen endre svaret til noe mer lesbart, som f.eks. antall centimeter fra Ping-en og til et objekt foran.&lt;/p&gt;
+
+&lt;p&gt;Fordelen er at den er enkel å bruke og man kan selv sette terskselverdier for handlinger basert på avstander. Ulempen er at objektet må være rett foran Ping-en. Jeg har gjort noen forsøk på f.eks. å holde et ark i 45 graders vinkel. Da klarer ikke Ping-en å måle avstanden. Antageligvis pga at signalet blir reflektert vekk og ikke tilbake.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Arduino og HC-SR04 (ultrasonisk sensor)</title>
+      <link>http://sjsd.github.io/post/arduino-og-hc-sr04-ultrasonisk-sensor/</link>
+      <pubDate>Thu, 03 Sep 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://sjsd.github.io/post/arduino-og-hc-sr04-ultrasonisk-sensor/</guid>
+      <description>
+
+&lt;p&gt;Dette innlegget er neste identisk med mitt innlegg &lt;a href=&#34;https://helgejohnsen.wordpress.com/2015/09/01/arduino-og-ping-ultrasonisk-sensor/&#34;&gt;Arduino og Ping (ultrasonisk sensor)&lt;/a&gt;. Eneste forskjellen er bytte av sen ultrasoniske sensoren. Både Ping oh HC-SR04 er populære sensorer å koble til Arduino. I bunn og grunn helt like produkter men med en stor forskjell – antall pinner. Ping har 3 mens HC-SR04 har 4 pinner. Derfor blir koblingskjemaet og koden bittelitt forskjellig.&lt;/p&gt;
+
+&lt;h2 id=&#34;tl-dr:7184f21ca1b74fa43e589a2770b7345e&#34;&gt;TL;DR&lt;/h2&gt;
+
+&lt;p&gt;En ultrasonisk sensor måler avstanden til et objekt. Basert på avstanden så vil tre ulike LED lyse opp. Grønn LED lyser ved avstand over 25cm. Orange LED lyser ved avstand mellom 10 og 25 cm. Rød LED lyser ved avstand under 10 cm.&lt;/p&gt;
+
+&lt;h2 id=&#34;skisse:7184f21ca1b74fa43e589a2770b7345e&#34;&gt;Skisse&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://helgejohnsen.files.wordpress.com/2015/09/hcsr04-2_bb.png&#34;&gt;&lt;img src=&#34;https://helgejohnsen.files.wordpress.com/2015/09/hcsr04-2_bb.png?w=700&amp;amp;h=361&#34; alt=&#34;hcsr04-2_bb&#34; /&gt;
+&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;hc-sr04:7184f21ca1b74fa43e589a2770b7345e&#34;&gt;HC-SR04&lt;/h2&gt;
+
+&lt;p&gt;HC-SR04 har 4 pinner:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;VCC – 5V (positiv)&lt;/li&gt;
+&lt;li&gt;Trig – signal inn fra Arduino (trigger)&lt;/li&gt;
+&lt;li&gt;Echo – signal ut fra&lt;/li&gt;
+&lt;li&gt;Gnd – jord (negativ)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Fordelen med fire pinner er at programmet til Arduinoen slipper å skifte mellom inn- og utgang på samme pinne.&lt;/p&gt;
+
+&lt;h2 id=&#34;konklusjon:7184f21ca1b74fa43e589a2770b7345e&#34;&gt;Konklusjon&lt;/h2&gt;
+
+&lt;p&gt;En HC-SR04 er like enkelt å sette opp og bruke som en Ping. Er man nybegynner så er det kanskje lettere å forstå programeringen med 4 pinner kontra 3 pinner. Man sender inn et signal og får straks svar tilbake på den andre pinnen.&lt;/p&gt;
+
+&lt;p&gt;Med en enkel formel så kan Arduinoen endre svaret til noe mer lesbart, som f.eks. antall centimeter fra Ping-en og til et objekt foran.&lt;/p&gt;
+
+&lt;p&gt;Fordelen er at den er enkel å bruke og man kan selv sette terskselverdier for handlinger basert på avstander. Ulempen er at objektet må være rett foran Ping-en. Jeg har gjort noen forsøk på f.eks. å holde et ark i 45 graders vinkel. Da klarer ikke Ping-en å måle avstanden. Antageligvis pga at signalet blir reflektert vekk og ikke tilbake.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Arduino og HC-SR04 (ultrasonisk sensor)</title>
+      <link>http://sjsd.github.io/post/arduino-og-hc-sr04-ultrasonisk-sensor/</link>
+      <pubDate>Thu, 03 Sep 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://sjsd.github.io/post/arduino-og-hc-sr04-ultrasonisk-sensor/</guid>
+      <description>
+
+&lt;p&gt;Dette innlegget er neste identisk med mitt innlegg &lt;a href=&#34;https://helgejohnsen.wordpress.com/2015/09/01/arduino-og-ping-ultrasonisk-sensor/&#34;&gt;Arduino og Ping (ultrasonisk sensor)&lt;/a&gt;. Eneste forskjellen er bytte av sen ultrasoniske sensoren. Både Ping oh HC-SR04 er populære sensorer å koble til Arduino. I bunn og grunn helt like produkter men med en stor forskjell – antall pinner. Ping har 3 mens HC-SR04 har 4 pinner. Derfor blir koblingskjemaet og koden bittelitt forskjellig.&lt;/p&gt;
+
+&lt;h2 id=&#34;tl-dr:7184f21ca1b74fa43e589a2770b7345e&#34;&gt;TL;DR&lt;/h2&gt;
+
+&lt;p&gt;En ultrasonisk sensor måler avstanden til et objekt. Basert på avstanden så vil tre ulike LED lyse opp. Grønn LED lyser ved avstand over 25cm. Orange LED lyser ved avstand mellom 10 og 25 cm. Rød LED lyser ved avstand under 10 cm.&lt;/p&gt;
+
+&lt;h2 id=&#34;skisse:7184f21ca1b74fa43e589a2770b7345e&#34;&gt;Skisse&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://helgejohnsen.files.wordpress.com/2015/09/hcsr04-2_bb.png&#34;&gt;&lt;img src=&#34;https://helgejohnsen.files.wordpress.com/2015/09/hcsr04-2_bb.png?w=700&amp;amp;h=361&#34; alt=&#34;hcsr04-2_bb&#34; /&gt;
+&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;hc-sr04:7184f21ca1b74fa43e589a2770b7345e&#34;&gt;HC-SR04&lt;/h2&gt;
+
+&lt;p&gt;HC-SR04 har 4 pinner:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;VCC – 5V (positiv)&lt;/li&gt;
+&lt;li&gt;Trig – signal inn fra Arduino (trigger)&lt;/li&gt;
+&lt;li&gt;Echo – signal ut fra&lt;/li&gt;
+&lt;li&gt;Gnd – jord (negativ)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Fordelen med fire pinner er at programmet til Arduinoen slipper å skifte mellom inn- og utgang på samme pinne.&lt;/p&gt;
+
+&lt;h2 id=&#34;konklusjon:7184f21ca1b74fa43e589a2770b7345e&#34;&gt;Konklusjon&lt;/h2&gt;
+
+&lt;p&gt;En HC-SR04 er like enkelt å sette opp og bruke som en Ping. Er man nybegynner så er det kanskje lettere å forstå programeringen med 4 pinner kontra 3 pinner. Man sender inn et signal og får straks svar tilbake på den andre pinnen.&lt;/p&gt;
+
+&lt;p&gt;Med en enkel formel så kan Arduinoen endre svaret til noe mer lesbart, som f.eks. antall centimeter fra Ping-en og til et objekt foran.&lt;/p&gt;
+
+&lt;p&gt;Fordelen er at den er enkel å bruke og man kan selv sette terskselverdier for handlinger basert på avstander. Ulempen er at objektet må være rett foran Ping-en. Jeg har gjort noen forsøk på f.eks. å holde et ark i 45 graders vinkel. Da klarer ikke Ping-en å måle avstanden. Antageligvis pga at signalet blir reflektert vekk og ikke tilbake.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Arduino og Ping (ultrasonisk sensor)</title>
+      <link>http://sjsd.github.io/post/arduino-og-ping-ultrasonisk-sensor/</link>
+      <pubDate>Tue, 01 Sep 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://sjsd.github.io/post/arduino-og-ping-ultrasonisk-sensor/</guid>
+      <description>
+
+&lt;p&gt;Dette er helt grunnleggende hvordan man kobler opp en Arduino og en Ping. Koden jeg har brukt er basert på standard eksempel fra Arduino. Eneste jeg har gjort er å legge til tre LED som lyser basert på avstand.&lt;/p&gt;
+
+&lt;p&gt;Jeg har lånt meg en Ping og satt opp en enkelt test. Dette er en liten del av et litt større prosjekt jeg planlegger. Flere innlegg vil nok komme etter hvert.&lt;/p&gt;
+
+&lt;h2 id=&#34;tl-dr:b6dccdf5da1a9e2ff64c9d8f617c8f2f&#34;&gt;TL;DR&lt;/h2&gt;
+
+&lt;p&gt;Når et objekt er lengre unna enn 26 cm så vil grønn LED lyse. Når et objekt er mellom 26 og 10 cm unna så vil orange LED lyse. Hvis et objekt er 10cm eller nærmere så vil rød LED lyse. Avstanden måles med Ping (en ultrasonisk sensor).&lt;/p&gt;
+
+&lt;h2 id=&#34;skisse:b6dccdf5da1a9e2ff64c9d8f617c8f2f&#34;&gt;Skisse&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://helgejohnsen.files.wordpress.com/2015/09/ping_bb.png?w=700&amp;amp;h=878&#34; alt=&#34;Arduino Ping&#34; /&gt;
+&lt;/p&gt;
+
+&lt;h2 id=&#34;kode:b6dccdf5da1a9e2ff64c9d8f617c8f2f&#34;&gt;Kode&lt;/h2&gt;
+
+&lt;p&gt;Dessverre så får jeg ikke limt inn koden og stilsatt den på en slik måte at den er lettlest. Dette pga restriksjoner knyttet til WordPress (siden jeg ikke hoster WordPress selv). Men jeg har lagt ut koden på Github for den som ønsker å laste den ned.&lt;/p&gt;
+
+&lt;p&gt;Se og last ned koden her &lt;a href=&#34;https://gist.github.com/sjsd/cf9ea98577b9b277143c&#34;&gt;https://gist.github.com/sjsd/cf9ea98577b9b277143c&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;konklusjon:b6dccdf5da1a9e2ff64c9d8f617c8f2f&#34;&gt;Konklusjon&lt;/h2&gt;
+
+&lt;p&gt;En Ping (eller en ultrasonisk sensor) er en veldig enkelt sak å sette opp. Den jeg har brukt her har tre pinne (en for 5V, jord og signal). Man sender inn et signal og får straks svar tilbake på samme pinne (utgang/inngang på Arduinoen). I koden jeg har brukes inn- utgang 7. Rett etter man har sendt et signal endrer man utgangen til en inngang som er klar for å ta imot signalet.&lt;/p&gt;
+
+&lt;p&gt;Med en enkel formel så kan Arduinoen endre svaret til noe mer lesbart, som f.eks. antall centimeter fra Ping-en og til et objekt foran.&lt;/p&gt;
+
+&lt;p&gt;Fordelen er at den er enkel å bruke og man kan selv sette terskselverdier for handlinger basert på avstander. Ulempen er at objektet må være rett foran Ping-en. Jeg har gjort noen forsøk på f.eks. å holde et ark i 45 graders vinkel. Da klarer ikke Ping-en å måle avstanden. Antageligvis pga at signalet blir reflektert vekk og ikke tilbake.&lt;/p&gt;
+
+&lt;p&gt;Likevel er jeg sikker på at en ultrasonisk sensor er det mest anvendelige i prosjektet mitt.&lt;/p&gt;
+
+&lt;p&gt;Ping-en jeg har brukt er en lånt enhet. Selv så venter jeg på en jeg har bestilt billig fra eBay. Den har fire pinner. Forskjellen er at man slipper å endre pinne 7 mellom å sende et signal og ta imot et signal. Man bruker da en egen inngang og en egen utgang for å sende eller motta signal. Ellers er prinsippet det samme.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Arduino og Ping (ultrasonisk sensor)</title>
+      <link>http://sjsd.github.io/post/arduino-og-ping-ultrasonisk-sensor/</link>
+      <pubDate>Tue, 01 Sep 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://sjsd.github.io/post/arduino-og-ping-ultrasonisk-sensor/</guid>
+      <description>
+
+&lt;p&gt;Dette er helt grunnleggende hvordan man kobler opp en Arduino og en Ping. Koden jeg har brukt er basert på standard eksempel fra Arduino. Eneste jeg har gjort er å legge til tre LED som lyser basert på avstand.&lt;/p&gt;
+
+&lt;p&gt;Jeg har lånt meg en Ping og satt opp en enkelt test. Dette er en liten del av et litt større prosjekt jeg planlegger. Flere innlegg vil nok komme etter hvert.&lt;/p&gt;
+
+&lt;h2 id=&#34;tl-dr:b6dccdf5da1a9e2ff64c9d8f617c8f2f&#34;&gt;TL;DR&lt;/h2&gt;
+
+&lt;p&gt;Når et objekt er lengre unna enn 26 cm så vil grønn LED lyse. Når et objekt er mellom 26 og 10 cm unna så vil orange LED lyse. Hvis et objekt er 10cm eller nærmere så vil rød LED lyse. Avstanden måles med Ping (en ultrasonisk sensor).&lt;/p&gt;
+
+&lt;h2 id=&#34;skisse:b6dccdf5da1a9e2ff64c9d8f617c8f2f&#34;&gt;Skisse&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://helgejohnsen.files.wordpress.com/2015/09/ping_bb.png?w=700&amp;amp;h=878&#34; alt=&#34;Arduino Ping&#34; /&gt;
+&lt;/p&gt;
+
+&lt;h2 id=&#34;kode:b6dccdf5da1a9e2ff64c9d8f617c8f2f&#34;&gt;Kode&lt;/h2&gt;
+
+&lt;p&gt;Dessverre så får jeg ikke limt inn koden og stilsatt den på en slik måte at den er lettlest. Dette pga restriksjoner knyttet til WordPress (siden jeg ikke hoster WordPress selv). Men jeg har lagt ut koden på Github for den som ønsker å laste den ned.&lt;/p&gt;
+
+&lt;p&gt;Se og last ned koden her &lt;a href=&#34;https://gist.github.com/sjsd/cf9ea98577b9b277143c&#34;&gt;https://gist.github.com/sjsd/cf9ea98577b9b277143c&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;konklusjon:b6dccdf5da1a9e2ff64c9d8f617c8f2f&#34;&gt;Konklusjon&lt;/h2&gt;
+
+&lt;p&gt;En Ping (eller en ultrasonisk sensor) er en veldig enkelt sak å sette opp. Den jeg har brukt her har tre pinne (en for 5V, jord og signal). Man sender inn et signal og får straks svar tilbake på samme pinne (utgang/inngang på Arduinoen). I koden jeg har brukes inn- utgang 7. Rett etter man har sendt et signal endrer man utgangen til en inngang som er klar for å ta imot signalet.&lt;/p&gt;
+
+&lt;p&gt;Med en enkel formel så kan Arduinoen endre svaret til noe mer lesbart, som f.eks. antall centimeter fra Ping-en og til et objekt foran.&lt;/p&gt;
+
+&lt;p&gt;Fordelen er at den er enkel å bruke og man kan selv sette terskselverdier for handlinger basert på avstander. Ulempen er at objektet må være rett foran Ping-en. Jeg har gjort noen forsøk på f.eks. å holde et ark i 45 graders vinkel. Da klarer ikke Ping-en å måle avstanden. Antageligvis pga at signalet blir reflektert vekk og ikke tilbake.&lt;/p&gt;
+
+&lt;p&gt;Likevel er jeg sikker på at en ultrasonisk sensor er det mest anvendelige i prosjektet mitt.&lt;/p&gt;
+
+&lt;p&gt;Ping-en jeg har brukt er en lånt enhet. Selv så venter jeg på en jeg har bestilt billig fra eBay. Den har fire pinner. Forskjellen er at man slipper å endre pinne 7 mellom å sende et signal og ta imot et signal. Man bruker da en egen inngang og en egen utgang for å sende eller motta signal. Ellers er prinsippet det samme.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Arduino og Ping (ultrasonisk sensor)</title>
+      <link>http://sjsd.github.io/post/arduino-og-ping-ultrasonisk-sensor/</link>
+      <pubDate>Tue, 01 Sep 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://sjsd.github.io/post/arduino-og-ping-ultrasonisk-sensor/</guid>
+      <description>
+
+&lt;p&gt;Dette er helt grunnleggende hvordan man kobler opp en Arduino og en Ping. Koden jeg har brukt er basert på standard eksempel fra Arduino. Eneste jeg har gjort er å legge til tre LED som lyser basert på avstand.&lt;/p&gt;
+
+&lt;p&gt;Jeg har lånt meg en Ping og satt opp en enkelt test. Dette er en liten del av et litt større prosjekt jeg planlegger. Flere innlegg vil nok komme etter hvert.&lt;/p&gt;
+
+&lt;h2 id=&#34;tl-dr:b6dccdf5da1a9e2ff64c9d8f617c8f2f&#34;&gt;TL;DR&lt;/h2&gt;
+
+&lt;p&gt;Når et objekt er lengre unna enn 26 cm så vil grønn LED lyse. Når et objekt er mellom 26 og 10 cm unna så vil orange LED lyse. Hvis et objekt er 10cm eller nærmere så vil rød LED lyse. Avstanden måles med Ping (en ultrasonisk sensor).&lt;/p&gt;
+
+&lt;h2 id=&#34;skisse:b6dccdf5da1a9e2ff64c9d8f617c8f2f&#34;&gt;Skisse&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://helgejohnsen.files.wordpress.com/2015/09/ping_bb.png?w=700&amp;amp;h=878&#34; alt=&#34;Arduino Ping&#34; /&gt;
+&lt;/p&gt;
+
+&lt;h2 id=&#34;kode:b6dccdf5da1a9e2ff64c9d8f617c8f2f&#34;&gt;Kode&lt;/h2&gt;
+
+&lt;p&gt;Dessverre så får jeg ikke limt inn koden og stilsatt den på en slik måte at den er lettlest. Dette pga restriksjoner knyttet til WordPress (siden jeg ikke hoster WordPress selv). Men jeg har lagt ut koden på Github for den som ønsker å laste den ned.&lt;/p&gt;
+
+&lt;p&gt;Se og last ned koden her &lt;a href=&#34;https://gist.github.com/sjsd/cf9ea98577b9b277143c&#34;&gt;https://gist.github.com/sjsd/cf9ea98577b9b277143c&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;konklusjon:b6dccdf5da1a9e2ff64c9d8f617c8f2f&#34;&gt;Konklusjon&lt;/h2&gt;
+
+&lt;p&gt;En Ping (eller en ultrasonisk sensor) er en veldig enkelt sak å sette opp. Den jeg har brukt her har tre pinne (en for 5V, jord og signal). Man sender inn et signal og får straks svar tilbake på samme pinne (utgang/inngang på Arduinoen). I koden jeg har brukes inn- utgang 7. Rett etter man har sendt et signal endrer man utgangen til en inngang som er klar for å ta imot signalet.&lt;/p&gt;
+
+&lt;p&gt;Med en enkel formel så kan Arduinoen endre svaret til noe mer lesbart, som f.eks. antall centimeter fra Ping-en og til et objekt foran.&lt;/p&gt;
+
+&lt;p&gt;Fordelen er at den er enkel å bruke og man kan selv sette terskselverdier for handlinger basert på avstander. Ulempen er at objektet må være rett foran Ping-en. Jeg har gjort noen forsøk på f.eks. å holde et ark i 45 graders vinkel. Da klarer ikke Ping-en å måle avstanden. Antageligvis pga at signalet blir reflektert vekk og ikke tilbake.&lt;/p&gt;
+
+&lt;p&gt;Likevel er jeg sikker på at en ultrasonisk sensor er det mest anvendelige i prosjektet mitt.&lt;/p&gt;
+
+&lt;p&gt;Ping-en jeg har brukt er en lånt enhet. Selv så venter jeg på en jeg har bestilt billig fra eBay. Den har fire pinner. Forskjellen er at man slipper å endre pinne 7 mellom å sende et signal og ta imot et signal. Man bruker da en egen inngang og en egen utgang for å sende eller motta signal. Ellers er prinsippet det samme.&lt;/p&gt;
+</description>
+    </item>
+    
   </channel>
 </rss>
