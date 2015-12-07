@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Arduino Nano, NewPing og HC-SR04 &middot; SJSD - blogg og notater om mine DIY </title>
+	<link rel="stylesheet" type="text/css" href="http://sjsd.github.io/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="http://sjsd.github.io/css/screen.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+	<meta name="generator" content="Hugo 0.14" />
+
+	
+	<link href="" rel="alternate" type="application/rss+xml" title="SJSD - blogg og notater om mine DIY" />
+</head>
+
+<body>
+
+	<nav class="navbar navbar-default">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="http://sjsd.github.io/" title="SJSD - blogg og notater om mine DIY">
+					SJSD - blogg og notater om mine DIY
+				</a>
+			</div>
+
+			<div class="collapse navbar-collapse" id="sjsd-navigation">
+				<ul class="nav navbar-nav navbar-right">
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" title="Meny">Meny <span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a href="http://sjsd.github.io/" title="Til forsiden">Forsiden</a></li>
+							
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+	<div class="container">
+		<div class="row">
+
+
+
+<div class="col-xs-12 sjsd-mainimage">
+	<img src="https://helgejohnsen.files.wordpress.com/2015/09/nano-hcsr04.jpg" class="img-responsive"/>				
+</div>
+
+
+
+
+<div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 sjsd-post">
+	<article>
+		<h1>Arduino Nano, NewPing og HC-SR04</h1>
+		<p class="byline">Skrevet av Helge Johnsen, 22. Sep 2015</p>
+		
+
+<p>Dette innlegget er egentlig veldig likt innlegget jeg skrev om <a href="https://helgejohnsen.wordpress.com/2015/09/01/arduino-og-ping-ultrasonisk-sensor/">Arduino og Ping (ultrasonisk sensor)</a> og innlegget om <a href="https://helgejohnsen.wordpress.com/2015/09/03/arduino-og-hc-sr04-ultrasonisk-sensor/">Arduino og HC-SR04 (ultrasonisk sensor)</a>. Likevel er det noen forskjeller som gjør det verdt å skrive om.</p>
+
+<p>Jeg har brukt en Arduino Nano V3.0 og HC-SR04 på et koblingsbrett. I motsetning til de to foregående eksemplene hvor jeg har skrevet om ultrasonisk sensor så har jeg benyttet meg av et bibliotek som heter NewPing (som du kan kan <a href="https://bitbucket.org/teckel12/arduino-new-ping/wiki/Home">laste ned fra BitBucket</a>).</p>
+
+<p>Det er flere fordeler ved å bruke NewPing:</p>
+
+<ul>
+<li>Mer nøyaktig avlesning</li>
+<li>Henger <strong>ikke</strong> i et sekund ved feil avlesning</li>
+<li>Man kan sette maks avstand for avstand</li>
+</ul>
+
+<p>++ flere du kan lese om på <a href="http://playground.arduino.cc/Code/NewPing">Arduino Playground</a>.</p>
+
+<p>Årsaken til at jeg har byttet fra standard Arduino-kode til NewPing sitt bibliotek var at jeg oppdaget at oppsettet trakk veldig my strøm og ved bruk av batteri så tømte batteriene seg raskt.</p>
+
+<p>Det gjenstår å teste Nano og NewPing med batteri.</p>
+
+<h2 id="skisse:48bb3d3d0bb3ed481672ec9b4b75f2e1">Skisse</h2>
+
+<p>Skissen viser hvordan jeg valgte å koble opp min Nano og HC-SR04.</p>
+
+<p><img src="https://helgejohnsen.files.wordpress.com/2015/09/nano-hcsr04_bb.png?w=700&amp;h=585" alt="Arduino Nano og HC-SR04 skisse" />
+</p>
+
+<h2 id="kode:48bb3d3d0bb3ed481672ec9b4b75f2e1">Kode</h2>
+
+<p>Koden jeg har testet med er <a href="http://playground.arduino.cc/Code/NewPing?action=sourceblock&amp;num=1">standard eksempelet til NewPing</a>. Eneste endringen jeg har gjort er å endre hvilken port som benyttes.</p>
+
+	</article>
+</div>
+
+
+		</div>
+	</div>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	<script type="text/javascript" src="http://sjsd.github.io/scripts/bootstrap.min.js"></script>
+
+</body>
+</html>
