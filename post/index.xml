@@ -6,8 +6,17 @@
     <description>Recent content in Posts on SJSD - blogg og notater om mine DIY</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>no-nb</language>
-    <lastBuildDate>Sun, 04 Oct 2015 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 09 Dec 2015 19:49:01 +0100</lastBuildDate>
     <atom:link href="http://sjsd.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Serial input (video)</title>
+      <link>http://sjsd.github.io/post/serial-input-video/</link>
+      <pubDate>Wed, 09 Dec 2015 19:49:01 +0100</pubDate>
+      
+      <guid>http://sjsd.github.io/post/serial-input-video/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Bluetooth i en gammel FM-radio</title>
