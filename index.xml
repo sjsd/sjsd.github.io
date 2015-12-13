@@ -6,18 +6,8 @@
     <description>Recent content on SJSD - blogg og notater om mine DIY</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>no-nb</language>
-    <lastBuildDate>Wed, 09 Dec 2015 19:49:01 +0100</lastBuildDate>
+    <lastBuildDate>Sun, 04 Oct 2015 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://sjsd.github.io/index.xml" rel="self" type="application/rss+xml" />
-    
-    <item>
-      <title>Serial input (video)</title>
-      <link>http://sjsd.github.io/post/serial-input-video/</link>
-      <pubDate>Wed, 09 Dec 2015 19:49:01 +0100</pubDate>
-      
-      <guid>http://sjsd.github.io/post/serial-input-video/</guid>
-      <description>&lt;iframe width=&#34;700&#34; height=&#34;424&#34; src=&#34;https://www.youtube.com/embed/7Se3AXBjWMM&#34; frameborder=&#34;0&#34; allowfullscreen&gt;&lt;/iframe&gt;
-</description>
-    </item>
     
     <item>
       <title>Bluetooth i en gammel FM-radio</title>
@@ -702,6 +692,16 @@ v=1&amp;amp;tid=UA-XXX-Y&amp;amp;cid=555&amp;amp;t=event&amp;amp;ec=Bevegelse&am
 &lt;/p&gt;
 
 &lt;p&gt;Åpen Blink-eksempelet. Bytt ut utgang 13 med utgang 4. Last så opp programmet ved å bruke &lt;em&gt;File -&amp;gt; Upload Using Programmer&lt;/em&gt; (eller Ctrl + Shift + U).&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Serial input (video)</title>
+      <link>http://sjsd.github.io/post/serial-input-video/</link>
+      <pubDate>Sat, 13 Apr 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://sjsd.github.io/post/serial-input-video/</guid>
+      <description>&lt;iframe width=&#34;700&#34; height=&#34;424&#34; src=&#34;https://www.youtube.com/embed/7Se3AXBjWMM&#34; frameborder=&#34;0&#34; allowfullscreen&gt;&lt;/iframe&gt;
 </description>
     </item>
     
