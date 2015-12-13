@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Serial input &middot; SJSD - blogg og notater om mine DIY </title>
+	<link rel="stylesheet" type="text/css" href="http://sjsd.github.io/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="http://sjsd.github.io/css/screen.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+	<meta name="generator" content="Hugo 0.14" />
+
+	
+	<link href="" rel="alternate" type="application/rss+xml" title="SJSD - blogg og notater om mine DIY" />
+	<script>
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	  ga('create', 'UA-12037709-8', 'auto');
+	  ga('send', 'pageview');
+
+	</script>
+
+
+</head>
+
+<body>
+
+	<nav class="navbar navbar-default">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="http://sjsd.github.io/" title="SJSD - blogg og notater om mine DIY">
+					SJSD - blogg og notater om mine DIY
+				</a>
+			</div>
+
+			<div class="collapse navbar-collapse" id="sjsd-navigation">
+				<ul class="nav navbar-nav navbar-right">
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" title="Meny">Meny <span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a href="http://sjsd.github.io/" title="Til forsiden">Forsiden</a></li>
+							
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+	<div class="container">
+		<div class="row">
+
+
+
+
+<div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 sjsd-post">
+	<article>
+		<h1>Serial input</h1>
+		<p class="byline">Skrevet av Helge Johnsen, 12. Apr 2013</p>
+		<p>Since I only have some LEDs to play with I had to be “creative”. So I have tried different ways to program my LEDs to light.</p>
+
+<p>This time I have been using the serial console in the Arduino enviroment software.</p>
+
+<p><strong>This is how it’s works:</strong></p>
+
+<p>By entering the numbers from 0 to 3 I make one of the four LEDs connected to the Arduino to light for some milliseconds.</p>
+
+<p>Here is the code: <a href="https://gist.github.com/sjsd/5375179">https://gist.github.com/sjsd/5375179</a></p>
+
+<p><a href="https://gist.github.com/5375179">https://gist.github.com/5375179</a></p>
+
+<p>It’s not so easy to see on the sketch below, but each LED is connected to a output, then through a resistor back to ground. Each LED is connected to their own output. I have used output 10 to 13.</p>
+
+<p><img src="https://i1.wp.com/38.media.tumblr.com/695db328a4021adc19079be7ecf714e9/tumblr_inline_ml5vg7387s1qz4rgp.png" alt="image" />
+</p>
+
+	</article>
+</div>
+
+
+		</div>
+	</div>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	<script type="text/javascript" src="http://sjsd.github.io/scripts/bootstrap.min.js"></script>
+</body>
+</html>

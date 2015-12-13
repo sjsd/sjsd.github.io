@@ -705,5 +705,30 @@ v=1&amp;amp;tid=UA-XXX-Y&amp;amp;cid=555&amp;amp;t=event&amp;amp;ec=Bevegelse&am
 </description>
     </item>
     
+    <item>
+      <title>Serial input</title>
+      <link>http://sjsd.github.io/post/serial-input/</link>
+      <pubDate>Fri, 12 Apr 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://sjsd.github.io/post/serial-input/</guid>
+      <description>&lt;p&gt;Since I only have some LEDs to play with I had to be “creative”. So I have tried different ways to program my LEDs to light.&lt;/p&gt;
+
+&lt;p&gt;This time I have been using the serial console in the Arduino enviroment software.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;This is how it’s works:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;By entering the numbers from 0 to 3 I make one of the four LEDs connected to the Arduino to light for some milliseconds.&lt;/p&gt;
+
+&lt;p&gt;Here is the code: &lt;a href=&#34;https://gist.github.com/sjsd/5375179&#34;&gt;https://gist.github.com/sjsd/5375179&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://gist.github.com/5375179&#34;&gt;https://gist.github.com/5375179&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;It’s not so easy to see on the sketch below, but each LED is connected to a output, then through a resistor back to ground. Each LED is connected to their own output. I have used output 10 to 13.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://i1.wp.com/38.media.tumblr.com/695db328a4021adc19079be7ecf714e9/tumblr_inline_ml5vg7387s1qz4rgp.png&#34; alt=&#34;image&#34; /&gt;
+&lt;/p&gt;
+</description>
+    </item>
+    
   </channel>
 </rss>
