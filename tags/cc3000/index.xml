@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Cc3000 on SJSD - blogg og notater om mine DIY</title>
+    <link>http://sjsd.github.io/tags/cc3000/</link>
+    <description>Recent content in Cc3000 on SJSD - blogg og notater om mine DIY</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>no-nb</language>
+    <lastBuildDate>Mon, 25 Jan 2016 19:22:25 +0100</lastBuildDate>
+    <atom:link href="http://sjsd.github.io/tags/cc3000/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Keyes CC3000 wifi shield på Arduino Uno</title>
+      <link>http://sjsd.github.io/post/keyes-cc3000-wifi-shield/</link>
+      <pubDate>Mon, 25 Jan 2016 19:22:25 +0100</pubDate>
+      
+      <guid>http://sjsd.github.io/post/keyes-cc3000-wifi-shield/</guid>
+      <description>
+
+&lt;p&gt;Jeg kjøpt mitt WIFI-shield via Banggoods (en billig Kina-butikk), type Keyes CC3000 WiFi Shield. Jeg forventet ikke mye av dette kontra &amp;ldquo;originale&amp;rdquo; men det skal være basert på CC3000-brikka. Så noe nytte må den vel gjøre. Jeg møtte på noen utfordringer og har forsøkt å oppsummere løsningene her.&lt;/p&gt;
+
+&lt;h2 id=&#34;bibliotek:351672304d0a25cac6bfa3631600e5e2&#34;&gt;Bibliotek&lt;/h2&gt;
+
+&lt;p&gt;Jeg forsøkte først &lt;a href=&#34;https://github.com/adafruit/Adafruit_CC3000_Library&#34;&gt;bibliotektet til Adafruit&lt;/a&gt;. Men fikk ikke koblet meg på det trådløse nettverket. Så forsøkte jeg &lt;a href=&#34;https://github.com/sparkfun/SFE_CC3000_Library&#34;&gt;bibliotektet til Sparkfun&lt;/a&gt;. Uten videre hell. Det skal vise seg at løsningen likevel ligger i biblioteket til Sparkfun.&lt;/p&gt;
+
+&lt;h2 id=&#34;endre-pinner:351672304d0a25cac6bfa3631600e5e2&#34;&gt;Endre pinner&lt;/h2&gt;
+
+&lt;p&gt;I definisjonen av pinner som brettet benytter så må man endre hvilken som benyttes. Slik:&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;#define CC3000_INT      3   // Needs to be an interrupt pin (D2/D3)&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;#define CC3000_EN       5   // Can be any digital pin&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;#define CC3000_CS       10  // Preferred is pin 10 on Uno&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;#define SD_CS           4   // Chip select for SD card&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Dette er faktisk den hele løsningen. Endre oppsettet for pinner som Arduino skal &amp;ldquo;snakke&amp;rdquo; med brettet med.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

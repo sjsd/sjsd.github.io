@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Keyes CC3000 wifi shield på Arduino Uno &middot; SJSD - blogg og notater om mine DIY </title>
+	<link rel="stylesheet" type="text/css" href="http://sjsd.github.io/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="http://sjsd.github.io/css/screen.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+	<meta name="generator" content="Hugo 0.14" />
+
+	
+	<link href="" rel="alternate" type="application/rss+xml" title="SJSD - blogg og notater om mine DIY" />
+	<script>
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	  ga('create', 'UA-12037709-8', 'auto');
+	  ga('send', 'pageview');
+
+	</script>
+
+
+</head>
+
+<body>
+
+	<nav class="navbar navbar-default">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="http://sjsd.github.io/" title="SJSD - blogg og notater om mine DIY">
+					SJSD - blogg og notater om mine DIY
+				</a>
+			</div>
+
+			<div class="collapse navbar-collapse" id="sjsd-navigation">
+				<ul class="nav navbar-nav navbar-right">
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" title="Meny">Meny <span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a href="http://sjsd.github.io/" title="Til forsiden">Forsiden</a></li>
+							
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+	<div class="container">
+		<div class="row">
+
+
+
+
+<div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 sjsd-post">
+	<article>
+		<h1>Keyes CC3000 wifi shield på Arduino Uno</h1>
+		<p class="byline">Skrevet av Helge Johnsen, 25. Jan 2016</p>
+		
+
+<p>Jeg kjøpt mitt WIFI-shield via Banggoods (en billig Kina-butikk), type Keyes CC3000 WiFi Shield. Jeg forventet ikke mye av dette kontra &ldquo;originale&rdquo; men det skal være basert på CC3000-brikka. Så noe nytte må den vel gjøre. Jeg møtte på noen utfordringer og har forsøkt å oppsummere løsningene her.</p>
+
+<h2 id="bibliotek:351672304d0a25cac6bfa3631600e5e2">Bibliotek</h2>
+
+<p>Jeg forsøkte først <a href="https://github.com/adafruit/Adafruit_CC3000_Library">bibliotektet til Adafruit</a>. Men fikk ikke koblet meg på det trådløse nettverket. Så forsøkte jeg <a href="https://github.com/sparkfun/SFE_CC3000_Library">bibliotektet til Sparkfun</a>. Uten videre hell. Det skal vise seg at løsningen likevel ligger i biblioteket til Sparkfun.</p>
+
+<h2 id="endre-pinner:351672304d0a25cac6bfa3631600e5e2">Endre pinner</h2>
+
+<p>I definisjonen av pinner som brettet benytter så må man endre hvilken som benyttes. Slik:</p>
+
+<p><code>#define CC3000_INT      3   // Needs to be an interrupt pin (D2/D3)</code></p>
+
+<p><code>#define CC3000_EN       5   // Can be any digital pin</code></p>
+
+<p><code>#define CC3000_CS       10  // Preferred is pin 10 on Uno</code></p>
+
+<p><code>#define SD_CS           4   // Chip select for SD card</code></p>
+
+<p>Dette er faktisk den hele løsningen. Endre oppsettet for pinner som Arduino skal &ldquo;snakke&rdquo; med brettet med.</p>
+
+	</article>
+</div>
+
+
+		</div>
+	</div>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	<script type="text/javascript" src="http://sjsd.github.io/scripts/bootstrap.min.js"></script>
+</body>
+</html>
