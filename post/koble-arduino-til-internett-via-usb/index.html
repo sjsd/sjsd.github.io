@@ -1,70 +1,34 @@
-<!DOCTYPE html>
-<html>
+<!doctype html> 
+<html lang="no-nb"> 
 <head>
-	<title> Koble Arduino til internett via USB &middot; SJSD - blogg og notater om mine DIY </title>
-	<link rel="stylesheet" type="text/css" href="http://sjsd.github.io/css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="http://sjsd.github.io/css/screen.css">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-
-	<meta name="generator" content="Hugo 0.14" />
-
-	
-	<link href="" rel="alternate" type="application/rss+xml" title="SJSD - blogg og notater om mine DIY" />
-	<script>
-	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-	  ga('create', 'UA-12037709-8', 'auto');
-	  ga('send', 'pageview');
-
-	</script>
-
+  <meta charset="utf-8">
+  <title>SJSD - blogg og notater om mine DIY</title>
+  <meta name="author" content="Helge Johnsen">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  
+  <link rel="icon" href="/favicon.png" />
+  <link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png" />
+  
+  
+  <link rel="stylesheet" href="/style.css" />
+  <link href='//fonts.googleapis.com/css?family=Merriweather:400,700' rel='stylesheet' type='text/css'>
 
 </head>
-
 <body>
 
-	<nav class="navbar navbar-default">
-		<div class="container-fluid">
-			<div class="navbar-header">
-				<a class="navbar-brand" href="http://sjsd.github.io/" title="SJSD - blogg og notater om mine DIY">
-					SJSD - blogg og notater om mine DIY
-				</a>
-			</div>
-
-			<div class="collapse navbar-collapse" id="sjsd-navigation">
-				<ul class="nav navbar-nav navbar-right">
-					<li class="dropdown">
-						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" title="Meny">Meny <span class="caret"></span></a>
-						<ul class="dropdown-menu">
-							<li><a href="http://sjsd.github.io/" title="Til forsiden">Forsiden</a></li>
-							
-						</ul>
-					</li>
-				</ul>
-			</div>
-		</div>
-	</nav>
-
-	<div class="container">
-		<div class="row">
+  <div class="wrap">
+    <header class="mb">
+      <h1 class="h2 m-0"><a href="/">SJSD - blogg og notater om mine DIY</a></h1>
+      <p></p>
+    </header>
 
 
-	
-	<div class="col-xs-12 sjsd-mainimage" style="background-image: url(https://helgejohnsen.files.wordpress.com/2015/09/arduino.jpg);">
-		
-	</div>
-	
-
-
-
-<div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 sjsd-post">
-	<article>
-		<h1>Koble Arduino til internett via USB</h1>
-		<p class="byline">Skrevet av Helge Johnsen, 11. Sep 2015</p>
-		
+<main>
+<article class="post">
+  <h1><a href="http://sjsd.github.io/post/koble-arduino-til-internett-via-usb/" title="Koble Arduino til internett via USB">Koble Arduino til internett via USB</a></h1>
+  
 
 <p>Det er mulig for en Arduino å skrive verdier til eller lese verdier fra internett via USB. Ikke så optimal løsning som å bruke eternetshield eller wifi, men dog mulig. Dette innlegget er et eksempel på hvordan jeg har lest av en verdi fra en fil som er tilgjengelig på internett og videresender denne verdien til min Arduino.</p>
 
@@ -78,73 +42,9 @@
 
 <p>Processing kan brukes til så mangt. Det vi skal bruke det til er å lese av en fil fra internett og sende den informasjonen videre til vår Arduino som er koble til via USB. Processing IDE er så likt Arduino IDE at når du skal programere så vil du lett kjenne deg igjen.</p>
 
-<p></div>
-<div class="clearfix"></div>
-<div class="col-xs-12 sjsd-post sjsd-post-image">
-
-    <figure >
-        
-            <img src="https://helgejohnsen.files.wordpress.com/2015/09/arduino-processing.png?w=1840&amp;h=997" alt="Skjermbilde av programvaren" />
-        
-        
-        <figcaption>
-            <h4>Skjermbilde av programvare</h4>
-            <p>
-            Skjermbilde av programvaren
-            
-                
-            
-            </p> 
-        </figcaption>
-        
-    </figure>
-
+  <p class="small gray"><time datetime="2015-09-120">Sep 09, 2015</time></p>
+</article>
+</main>
 </div>
-<div class="clearfix"></div>
-<div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 sjsd-post"></p>
-
-<h2 id="kodesnutter:e57ce773b0205d14e1ef7825b731e38d">Kodesnutter</h2>
-
-<p>Jeg kommer ikke til å gå inn i detalj for hver enkelt linje i koden. Jeg har forsøkt å kommentere hva som skjer i selve kodesnuttene.</p>
-
-<h3 id="tekstfilen:e57ce773b0205d14e1ef7825b731e38d">Tekstfilen</h3>
-
-<p>Vi begynner med tekstfilen som skal ligge tilgjengelig på internett. I dette eksempelet skal den inneholde et tall. F.eks. 10.</p>
-
-<p>Du trenger et nettsted å laste filen opp til og tilgang til å lese den. F.eks. <a href="http://www.example.com/value.txt">http://www.example.com/value.txt</a></p>
-
-<h3 id="processkoden:e57ce773b0205d14e1ef7825b731e38d">Processkoden</h3>
-
-<p>I korte trekk så tar Processing å leser filen vi har lastet opp på internett. Så tar den tallet og sender via serial (USB) til en Arduino.</p>
-
-<p>Du kan <a href="https://gist.github.com/sjsd/73756ec4e75d137bb470">laste ned min ferdigkode fra Github</a>. Jeg har etter beste evne forsøkt å kommentere hva som skjer i koden. Gjør nødvendige endringer i koden, som adressen til din tekstfil med verdien.</p>
-
-<h3 id="arduinokoden:e57ce773b0205d14e1ef7825b731e38d">Arduinokoden</h3>
-
-<p>I korte trekk så leser Arduinoen av informasjon som kommer via serial (i dette tilfellet fra Processing).</p>
-
-<p>Du kan <a href="https://gist.github.com/sjsd/73756ec4e75d137bb470">laste ned min ferdigkode fra Github</a>. Jeg har etter beste evne forsøkt å kommentere hva som skjer i koden. Før koden over til din Arduino.</p>
-
-<h2 id="hvordan-utføre:e57ce773b0205d14e1ef7825b731e38d">Hvordan utføre</h2>
-
-<p>Hvis du ikke allerede har gjort det så før over koden til din Arduino. Den vil nå sjekke om det kommer noe informasjon via USB fra Processing. Trykk på «Play» i Processing. LED på Arduinoen vil nå snart blinke like mange ganger som vi har satt verdien i tekstfilen.</p>
-
-<h2 id="hva-kan-man-bruke-dette-til:e57ce773b0205d14e1ef7825b731e38d">Hva kan man bruke dette til?</h2>
-
-<p>Verdien som Processing leser av må ikke være en statisk tekstfil. Det kan være så mye annet. F.eks. en eller annen verdi forå styre et lys, flere lys, analog verdi som du kan gjøre om til å få din Arduino til å kontrollere et eller annet.</p>
-
-<p>Man kan også snu på flisa og få Processing til å få en verdi fra Arduino og skrive til en fil. F.eks. hvis man har en temperaturmåler koblet til en Arduino så kan Processing skrive denne verdien til en fil på din datamaskin eller på internett.</p>
-
-<p>Mitt eksempel i dette innlegget er helt grunnleggende bare for å vise at det er mulig å koble en Arduino til internett via en USB-kabel.</p>
-
-	</article>
-</div>
-
-
-		</div>
-	</div>
-
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-	<script type="text/javascript" src="http://sjsd.github.io/scripts/bootstrap.min.js"></script>
 </body>
 </html>
