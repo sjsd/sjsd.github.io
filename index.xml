@@ -6,8 +6,309 @@
     <description>Recent content on SJSD - blogg og notater om mine DIY</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>no-nb</language>
-    <lastBuildDate>Mon, 25 Jan 2016 19:22:25 +0100</lastBuildDate>
+    <lastBuildDate>Sun, 03 Apr 2016 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://sjsd.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Kodeklbubben, Processing og Ping-Pong (forslag til løsning)</title>
+      <link>http://sjsd.github.io/post/kodeklubben-processing-pingpong/</link>
+      <pubDate>Sun, 03 Apr 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://sjsd.github.io/post/kodeklubben-processing-pingpong/</guid>
+      <description>
+
+&lt;p&gt;Dette er en kopi og gjennomgang av oppgaven &lt;a href=&#34;http://kodeklubben.github.io/processing/pingpong/pingpong.html&#34; title=&#34;Ping pong for Processing, Kodeklubben&#34;&gt;Ping pong for Processing&lt;/a&gt; laget av Kodeklubben. Min løsning er langt ifra den mest effektive kode. Men den tar utangspunkt i hvert steg i oppgaven og meningen er at man enkelt skal kunne lese seg frem til løsningen.&lt;/p&gt;
+
+&lt;p&gt;Jeg anbefaler at du går igjennom oppgavene &lt;a href=&#34;http://kodeklubben.github.io/processing/pingpong/pingpong.html&#34; title=&#34;Ping pong for Processing, Kodeklubben&#34;&gt;Ping pong for Processing&lt;/a&gt; før du ser på min løsning. Kanskje du finner en bedre vei enn meg. Står du fast kan du ta en titt i min løsning.&lt;/p&gt;
+
+&lt;p&gt;Min kode viser den fulle løsningen når du har gjennomført alle deloppgavene.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;pingpong.gif&#34; alt=&#34;Animert bilde av PingPong&#34; title=&#34;Processing Pingpong&#34; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;forklaring-av-koden:7e979b591601df796367c2e55b020eac&#34;&gt;Forklaring av koden&lt;/h2&gt;
+
+&lt;h3 id=&#34;del-1-ballen:7e979b591601df796367c2e55b020eac&#34;&gt;Del 1: Ballen&lt;/h3&gt;
+
+&lt;p&gt;Vi setter opp noen variabler for ballen. For eksempel farten den skal ha i både X-aksen og Y-aksen og størrelsen.
+&lt;pre&gt;// Ball
+float ballX;
+float ballY;
+float ballXFart = 2;
+float ballYFart = 2;
+float ballRadius = 9;
+float ballDiameter = ballRadius * 2;&lt;/pre&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;del-2-rekkertene:7e979b591601df796367c2e55b020eac&#34;&gt;Del 2: Rekkertene&lt;/h3&gt;
+
+&lt;p&gt;Vi setter opp variabler for to rekkerter. En som skal plasseres på venstre side og en på høyre side. De har begge samme størrelse. Likevel setter vi opp størrelsen for rekkert 1 og rekkert 2. Årsaken er at vi kommer til å endre størrelsen på rekkertene i spillet.
+&lt;pre&gt;// Rekkertene
+float rekkert1Hoyde = 66; // Rekkert 1 sin høyde ved start av spillet
+float rekkert2Hoyde = 66; // Rekkert 2 sin høyde ved start av spillet
+float rekkertBredde = 5; // Rekkertenes bredde
+float rekkertFart = 4; // Hastighet på rekkertene&lt;/pre&gt;&lt;/p&gt;
+
+&lt;pre&gt;// Rekkert 1 sin plassering i X- og Y-aksen
+float rekkert1X = 20;
+float rekkert1Y = 100;&lt;/pre&gt;
+
+&lt;pre&gt;// Rekkert 2 sin plassering i X- og Y-aksen
+float rekkert2X = 575;
+float rekkert2Y = 100;&lt;/pre&gt;
+
+&lt;h3 id=&#34;del-3-poeng:7e979b591601df796367c2e55b020eac&#34;&gt;Del 3: Poeng&lt;/h3&gt;
+
+&lt;p&gt;Vi setter poengene til 0 for begge spillerne
+&lt;pre&gt;// Poeng
+int spiller1 = 0;
+int spiller2 = 0;&lt;/pre&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;del-4-det-olbigatoriske-oppsettet:7e979b591601df796367c2e55b020eac&#34;&gt;Del 4: Det olbigatoriske oppsettet&lt;/h3&gt;
+
+&lt;p&gt;Vi setter størrelsen til 600x300 i henhld til oppgaven. Nå vi vet størrelsen så kan vi også sette ballens startposisjon.&lt;/p&gt;
+
+&lt;pre&gt;void setup() {
+  size(600,300);
+
+  // Starposisjon for ball
+  ballX = width / 2;
+  ballY = height / 2;
+}&lt;/pre&gt;
+
+&lt;h3 id=&#34;del-5-utregning-regler-og-opptegning:7e979b591601df796367c2e55b020eac&#34;&gt;Del 5: Utregning, regler og opptegning&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;VIKTIG!&lt;/strong&gt; All kode etter dette punktet legges til innen for draw(). Så vi begynner med å lage den.
+&lt;pre&gt;void draw() {
+    // All kode legger vi inn her
+}&lt;/pre&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;del-6-ballens-hastighet-og-fart:7e979b591601df796367c2e55b020eac&#34;&gt;Del 6: Ballens hastighet og fart&lt;/h3&gt;
+
+&lt;p&gt;Vi angir ballens posisjon + fart i både X-aksen og Y-aksen&lt;/p&gt;
+
+&lt;pre&gt;// Posisjon for ball
+ballX = ballX + ballXFart;
+ballY = ballY + ballYFart;&lt;/pre&gt;
+
+&lt;h3 id=&#34;del-7-hva-skjer-med-ballen:7e979b591601df796367c2e55b020eac&#34;&gt;Del 7: Hva skjer med ballen&lt;/h3&gt;
+
+&lt;p&gt;Hva skjer med ballen når den kommer utenfor kanten på venstre eller høyre side. Vi sjekker ballens posisjon mot kanten av &amp;ldquo;bordtennisbordet&amp;rdquo;.  Kommer den utenfor kanten så begynner den på nytt midt på bordet.&lt;/p&gt;
+
+&lt;pre&gt;// Ny posisjon for ball hvis den kommer utenfor venstre side
+if (ballX &lt; ballRadius) {
+    ballX = width / 2;
+    ballY = height / 2;
+}&lt;/pre&gt;
+
+&lt;pre&gt;// Ny posisjon for ball hvis den kommer utenfor høyre side 
+if (ballX &gt; width - ballRadius) {
+    ballX = width / 2;
+    ballY = height / 2;
+}&lt;/pre&gt;
+
+&lt;p&gt;Hvis ballen treffet toppen eller bunnen så endrer vi retning ved sette på en minus (-) foran farten. Da snur ballen.&lt;/p&gt;
+
+&lt;pre&gt;// Y-retning - sprett i toppen
+if (ballY &lt; ballRadius) {
+    ballYFart = -ballYFart;
+}&lt;/pre&gt;
+
+&lt;pre&gt;// Y-retning - sprett i bunnen
+if (ballY &gt; height - ballRadius) {
+    ballYFart = -ballYFart;
+}&lt;/pre&gt;
+
+&lt;h3 id=&#34;del-8-når-ballen-treffer-rekkerten:7e979b591601df796367c2e55b020eac&#34;&gt;Del 8: Når ballen treffer rekkerten&lt;/h3&gt;
+
+&lt;p&gt;Siden vi har lagt opp til at vi skal ha noen rekkerter så legger vi til noen &amp;ldquo;regler&amp;rdquo; via &lt;code&gt;if&lt;/code&gt;. Først legger vi til en regel for rekkerten til venstre (spiller 1).&lt;/p&gt;
+
+&lt;pre&gt;// Hvis ball treffer rekkert på venstre side
+if (ballX-ballRadius &lt; rekkert1X + rekkertBredde &amp;&amp; ballX + ballRadius &gt; rekkert1X) {
+    if (ballY &lt; rekkert1Y + rekkert1Hoyde &amp;&amp; ballY &gt; rekkert1Y) {
+        ballX = ballX + rekkertBredde; // Ny posisjon for ball i X-aksen
+        ballXFart = -ballXFart; // Ny retning for ball i X-aksen
+        rekkert1Hoyde = rekkert1Hoyde - 2; // Gjør rekkert litt mindre
+        spiller1 = spiller1 + 1; // Legg på poeng for spiller 1        
+    }
+}&lt;/pre&gt;
+
+&lt;p&gt;Så legger vi til en &amp;ldquo;regel&amp;rdquo; for hva som skal hende med ballen når den treffer den andre rekkerten (for spiller 2).&lt;/p&gt;
+
+&lt;pre&gt;// Hvis ball treffer rekkert på høyre side
+if (ballX-ballRadius &lt; rekkert2X + rekkertBredde &amp;&amp; ballX + ballRadius &gt; rekkert2X) {
+    if (ballY &lt; rekkert2Y + rekkert2Hoyde &amp;&amp; ballY &gt; rekkert2Y) {
+        ballX = ballX - rekkertBredde; // Ny posisjon for ball i Y-aksen
+        ballXFart = -ballXFart; // Ny retning for ball i Y-aksen
+        rekkert2Hoyde = rekkert2Hoyde - 2; // Gjør rekkert litt mindre
+        spiller2 = spiller2 + 1; // Legg på poeng for spiller 2
+    }
+}&lt;/pre&gt;
+
+&lt;p&gt;Hvis vi ser på de to &amp;ldquo;reglene&amp;rdquo; for begge rekkertene så er de nesten like. Når ballen treffer rekkerten så endres retningen for ballen. I tillegg gjør vi noe lurt for å gjøre spillet litt vanskeligere. Høyden på rekkerten blir litt lavere for hver gang man &amp;ldquo;slår&amp;rdquo; ballen. Så får man et poeng.&lt;/p&gt;
+
+&lt;h3 id=&#34;spilltaster:7e979b591601df796367c2e55b020eac&#34;&gt;Spilltaster&lt;/h3&gt;
+
+&lt;p&gt;For å kunne spille så må man kunne kontrollere rekkertene. Dette gjøres ved å sjekke om det er en tast på tastaturet som blir trykket ned. Så sjekker vi hvilken tast det er og om det stemmer overens med de vi ønsker å bruke for å kontrollere en av rekkertene.&lt;/p&gt;
+
+&lt;pre&gt;if (keyPressed) {
+    // Kontroll av rekkert 2 (høyre side)
+    if (keyCode == UP) {
+        rekkert2Y = rekkert2Y - rekkertFart;
+    }
+
+    if (keyCode == DOWN) {
+        rekkert2Y = rekkert2Y + rekkertFart;
+    }
+
+    // Kontroll av rekkert 1 (venstre side)
+    if (key == &#39;w&#39;) {
+        rekkert1Y = rekkert1Y - rekkertFart;
+    }
+
+    if (key == &#39;s&#39;) {
+        rekkert1Y = rekkert1Y + rekkertFart;
+    }
+}&lt;/pre&gt;
+
+&lt;p&gt;Som du ser i koden så bruker vi piltast opp og ned. De kontrollerer rekkerten til høyre (spiller 1). Mens &lt;i&gt;w&lt;/i&gt; og &lt;i&gt;s&lt;/i&gt; er for rekkerten til venstre (spiller 1).&lt;/p&gt;
+
+&lt;h3 id=&#34;del-9-tegn-opp-figurer:7e979b591601df796367c2e55b020eac&#34;&gt;Del 9: Tegn opp figurer&lt;/h3&gt;
+
+&lt;p&gt;Nå skal vi oppdatere skjermen med alle de tall og variabler vi har angitt eller endret på.&lt;/p&gt;
+
+&lt;pre&gt;
+background(0);
+ellipse(ballX, ballY, ballDiameter, ballDiameter); // Tegn ball
+rect(rekkert1X, rekkert1Y, rekkertBredde, rekkert1Hoyde); // Tegn rekkert 1
+rect(rekkert2X, rekkert2Y, rekkertBredde, rekkert2Hoyde); // Tegn rekkert 2
+text(spiller1+&#34; poeng&#34;,10,10); // Poenh for spiller 1
+text(spiller2+&#34; poeng&#34;,550,10); // Poeng for spiller 2
+&lt;/pre&gt;
+
+&lt;h3 id=&#34;del-10-komplett-kode:7e979b591601df796367c2e55b020eac&#34;&gt;Del 10: Komplett kode&lt;/h3&gt;
+
+&lt;p&gt;Slik ser den ferdige koden ut.&lt;/p&gt;
+
+&lt;pre&gt;
+// Ball
+float ballX;
+float ballY;
+float ballXFart = 2;
+float ballYFart = 2;
+float ballRadius = 9;
+float ballDiameter = ballRadius * 2;
+
+// Rekkertene
+float rekkert1Hoyde = 66; // Rekkert 1 sin høyde ved start av spillet
+float rekkert2Hoyde = 66; // Rekkert 2 sin høyde ved start av spillet
+float rekkertBredde = 5; // Rekkertenes bredde
+float rekkertFart = 4; // Hastighet på rekkertene
+
+// Rekkert 1 sin plassering i X- og Y-aksen
+float rekkert1X = 20;
+float rekkert1Y = 100;
+
+// Rekkert 2 sin plassering i X- og Y-aksen
+float rekkert2X = 575;
+float rekkert2Y = 100;
+
+// Poeng
+int spiller1 = 0;
+int spiller2 = 0;
+
+
+void setup() {
+    size(600,300);
+    
+    smooth(2);
+    // Starposisjon for ball
+    ballX = width / 2;
+    ballY = height / 2;
+}
+
+void draw() {
+    // Posisjon for ball
+    ballX = ballX + ballXFart;
+    ballY = ballY + ballYFart;
+    
+    // Ny posisjon for ball hvis den kommer utenfor venstre side
+    if (ballX &lt; ballRadius) {
+        ballX = width / 2;
+        ballY = height / 2;
+    }
+
+    // Ny posisjon for ball hvis den kommer utenfor høyre side 
+    if (ballX &gt; width - ballRadius) {
+        ballX = width / 2;
+        ballY = height / 2;
+    }
+    
+    // Y-retning - sprett i toppen
+    if (ballY &lt; ballRadius) {
+        ballYFart = -ballYFart;
+    }
+    
+    // Y-retning - sprett i bunnen
+    if (ballY &gt; height - ballRadius) {
+        ballYFart = -ballYFart;
+    }
+    
+    // Hvis ball treffer rekkert på venstre side
+    if (ballX-ballRadius &lt; rekkert1X + rekkertBredde &amp;&amp; ballX + ballRadius &gt; rekkert1X) {
+            if (ballY &lt; rekkert1Y + rekkert1Hoyde &amp;&amp; ballY &gt; rekkert1Y) {
+                ballX = ballX + rekkertBredde; // Ny posisjon for ball i X-aksen
+                ballXFart = -ballXFart; // Ny retning for ball i X-aksen
+                rekkert1Hoyde = rekkert1Hoyde - 2; // Gjør rekkert litt mindre
+                spiller1 = spiller1 + 1; // Legg på poeng for spiller 1        
+            }
+    }
+    
+    // Hvis ball treffer rekkert på høyre side
+    if (ballX-ballRadius &lt; rekkert2X + rekkertBredde &amp;&amp; ballX + ballRadius &gt; rekkert2X) {
+            if (ballY &lt; rekkert2Y + rekkert2Hoyde &amp;&amp; ballY &gt; rekkert2Y) {
+                ballX = ballX - rekkertBredde; // Ny posisjon for ball i Y-aksen
+                ballXFart = -ballXFart; // Ny retning for ball i Y-aksen
+                rekkert2Hoyde = rekkert2Hoyde - 2; // Gjør rekkert litt mindre
+                spiller2 = spiller2 + 1; // Legg på poeng for spiller 2
+            }
+    }
+    
+    if (keyPressed) {
+        // Kontroll av rekkert 2 (høyre side)
+        if (keyCode == UP) {
+            rekkert2Y = rekkert2Y - rekkertFart;
+        }
+        
+        if (keyCode == DOWN) {
+            rekkert2Y = rekkert2Y + rekkertFart;
+        }
+
+        // Kontroll av rekkert 1 (venstre side)
+        if (key == &#39;w&#39;) {
+            rekkert1Y = rekkert1Y - rekkertFart;
+        }
+        
+        if (key == &#39;s&#39;) {
+            rekkert1Y = rekkert1Y + rekkertFart;
+        }
+    }
+    
+
+    background(0);
+    ellipse(ballX, ballY, ballDiameter, ballDiameter); // Tegn ball
+    rect(rekkert1X, rekkert1Y, rekkertBredde, rekkert1Hoyde); // Tegn rekkert 1
+    rect(rekkert2X, rekkert2Y, rekkertBredde, rekkert2Hoyde); // Tegn rekkert 2
+    text(spiller1+&#34; poeng&#34;,10,10); // Poenh for spiller 1
+    text(spiller2+&#34; poeng&#34;,550,10); // Poeng for spiller 2
+}
+&lt;/pre&gt;
+
+&lt;p&gt;Klarer du å lage en autoplay som spiller spillet for deg?
+Klarer du å legge på egne farger på de enkelte delene?
+Klarer du å få flere poeng en din motstander?&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Lykke til!&lt;/strong&gt;&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Keyes CC3000 wifi shield på Arduino Uno</title>
