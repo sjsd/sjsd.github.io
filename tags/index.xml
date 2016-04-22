@@ -10,16 +10,16 @@
     <atom:link href="http://sjsd.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
-      <title>Kodeklbubben, Processing og Ping-Pong (forslag til løsning)</title>
+      <title>Kodeklubben, Processing og Ping-Pong (forslag til løsning)</title>
       <link>http://sjsd.github.io/post/kodeklubben-processing-pingpong/</link>
       <pubDate>Sun, 03 Apr 2016 00:00:00 +0000</pubDate>
       
       <guid>http://sjsd.github.io/post/kodeklubben-processing-pingpong/</guid>
       <description>
 
-&lt;p&gt;Dette er en kopi og gjennomgang av oppgaven &lt;a href=&#34;http://kodeklubben.github.io/processing/pingpong/pingpong.html&#34; title=&#34;Ping pong for Processing, Kodeklubben&#34;&gt;Ping pong for Processing&lt;/a&gt; laget av Kodeklubben. Min løsning er langt ifra den mest effektive kode. Men den tar utangspunkt i hvert steg i oppgaven og meningen er at man enkelt skal kunne lese seg frem til løsningen.&lt;/p&gt;
+&lt;p&gt;Dette er en kopi og gjennomgang av oppgaven &lt;a href=&#34;http://kodeklubben.github.io/processing/pingpong/pingpong.html&#34; title=&#34;Ping pong for Processing, Kodeklubben&#34;&gt;Ping pong for Processing&lt;/a&gt; laget av Kodeklubben. Min løsning er langt ifra den mest effektive kode. Den tar utangspunkt i hvert steg i oppgaven. Meningen er at man enkelt skal kunne lese seg frem til løsningen.&lt;/p&gt;
 
-&lt;p&gt;Jeg anbefaler at du går igjennom oppgavene &lt;a href=&#34;http://kodeklubben.github.io/processing/pingpong/pingpong.html&#34; title=&#34;Ping pong for Processing, Kodeklubben&#34;&gt;Ping pong for Processing&lt;/a&gt; før du ser på min løsning. Kanskje du finner en bedre vei enn meg. Står du fast kan du ta en titt i min løsning.&lt;/p&gt;
+&lt;p&gt;Jeg anbefaler at du går igjennom oppgavene &lt;a href=&#34;http://kodeklubben.github.io/processing/pingpong/pingpong.html&#34; title=&#34;Ping pong for Processing, Kodeklubben&#34;&gt;Ping pong for Processing&lt;/a&gt; før du ser på min løsning. Kanskje du finner en bedre løsing enn meg. Står du fast kan du ta en titt på hvordan jeghar valgt å løse det.&lt;/p&gt;
 
 &lt;p&gt;Min kode viser den fulle løsningen når du har gjennomført alle deloppgavene.&lt;/p&gt;
 
@@ -38,6 +38,20 @@ float ballYFart = 2;
 float ballRadius = 9;
 float ballDiameter = ballRadius * 2;&lt;/pre&gt;&lt;/p&gt;
 
+&lt;h4 id=&#34;ballx-og-bally:7e979b591601df796367c2e55b020eac&#34;&gt;ballX og ballY&lt;/h4&gt;
+
+&lt;p&gt;Variablene &lt;i&gt;ballX&lt;/i&gt; og &lt;i&gt;ballY&lt;/i&gt; har ingen verdi. Vi bare klargjør variablene for at vi skal kunne bruke dem senere.&lt;/p&gt;
+
+&lt;h4 id=&#34;ballxfart-og-ballyfart:7e979b591601df796367c2e55b020eac&#34;&gt;ballXFart og ballYFart&lt;/h4&gt;
+
+&lt;p&gt;Variabelen &lt;i&gt;ballXFart&lt;/i&gt; bestemmer hastigheten i X-aksen. Dvs. hastigheten ballen har mot venstre eller høyre.&lt;/p&gt;
+
+&lt;p&gt;Variabelen &lt;i&gt;ballYFart&lt;/i&gt; bestemmer hastigheten i Y-aksen. Dvs. hastigheten ballen har opp og ned.&lt;/p&gt;
+
+&lt;h4 id=&#34;ballradius-og-balldiameter:7e979b591601df796367c2e55b020eac&#34;&gt;ballRadius og ballDiameter&lt;/h4&gt;
+
+&lt;p&gt;Variabelen &lt;i&gt;ballRadius&lt;/i&gt; og &lt;i&gt;ballDiameter&lt;/i&gt; bestemmer størrelsen på ballen. Disse variablene bruker vi blant annet til å sjekke om kanten av ballen treffer en rekkert eller kanten av banen.&lt;/p&gt;
+
 &lt;h3 id=&#34;del-2-rekkertene:7e979b591601df796367c2e55b020eac&#34;&gt;Del 2: Rekkertene&lt;/h3&gt;
 
 &lt;p&gt;Vi setter opp variabler for to rekkerter. En som skal plasseres på venstre side og en på høyre side. De har begge samme størrelse. Likevel setter vi opp størrelsen for rekkert 1 og rekkert 2. Årsaken er at vi kommer til å endre størrelsen på rekkertene i spillet.
@@ -47,6 +61,18 @@ float rekkert2Hoyde = 66; // Rekkert 2 sin høyde ved start av spillet
 float rekkertBredde = 5; // Rekkertenes bredde
 float rekkertFart = 4; // Hastighet på rekkertene&lt;/pre&gt;&lt;/p&gt;
 
+&lt;h4 id=&#34;rekkert1hoyde-og-rekkert2hoyde:7e979b591601df796367c2e55b020eac&#34;&gt;rekkert1Hoyde og rekkert2Hoyde&lt;/h4&gt;
+
+&lt;p&gt;Variablene &lt;i&gt;rekkert1Hoyde&lt;/i&gt; og &lt;i&gt;rekkert2Hoyde&lt;/i&gt; bestemmer høyden på de to rekkertene. Vi starter med lik høyde for begge to.&lt;/p&gt;
+
+&lt;h4 id=&#34;rekkertbredde:7e979b591601df796367c2e55b020eac&#34;&gt;rekkertBredde&lt;/h4&gt;
+
+&lt;p&gt;Variabelen &lt;i&gt;rekkertBredde&lt;/i&gt; bestemmer bredden på rekkertene. Her skiller vi ikke mellom de to rekkertene. De får samme bredde og derfor setter vi opp kun en felles variabel.&lt;/p&gt;
+
+&lt;h4 id=&#34;rekkertfart:7e979b591601df796367c2e55b020eac&#34;&gt;rekkertFart&lt;/h4&gt;
+
+&lt;p&gt;Variabelen &lt;i&gt;rekkertFart&lt;/i&gt; bestemmer hvor raskt rekkertene kan bevege seg. Vi lar begge rekkertene bevege seg like raskt og derfor deler de samme variabel.&lt;/p&gt;
+
 &lt;pre&gt;// Rekkert 1 sin plassering i X- og Y-aksen
 float rekkert1X = 20;
 float rekkert1Y = 100;&lt;/pre&gt;
@@ -55,12 +81,20 @@ float rekkert1Y = 100;&lt;/pre&gt;
 float rekkert2X = 575;
 float rekkert2Y = 100;&lt;/pre&gt;
 
+&lt;h4 id=&#34;plassering-av-rekkerter:7e979b591601df796367c2e55b020eac&#34;&gt;Plassering av rekkerter&lt;/h4&gt;
+
+&lt;p&gt;Variablene &lt;i&gt;rekkert1X&lt;/i&gt; og &lt;i&gt;rekkert1Y&lt;/i&gt; plasserer rekkert 1 (for spiller 1) helt til venstre på banen. Men variablene &lt;i&gt;rekkert2X&lt;/i&gt; og &lt;i&gt;rekkert2Y&lt;/i&gt; plasserer rekkert 2 (for spiller 2) helt til høyre på banen.&lt;/p&gt;
+
 &lt;h3 id=&#34;del-3-poeng:7e979b591601df796367c2e55b020eac&#34;&gt;Del 3: Poeng&lt;/h3&gt;
 
 &lt;p&gt;Vi setter poengene til 0 for begge spillerne
 &lt;pre&gt;// Poeng
 int spiller1 = 0;
 int spiller2 = 0;&lt;/pre&gt;&lt;/p&gt;
+
+&lt;h4 id=&#34;spiller1-og-spiller2:7e979b591601df796367c2e55b020eac&#34;&gt;spiller1 og spiller2&lt;/h4&gt;
+
+&lt;p&gt;Variablene &lt;i&gt;spiller1&lt;/i&gt; og &lt;i&gt;spiller2&lt;/i&gt; er poengene de to spillerne har når spillet starter.&lt;/p&gt;
 
 &lt;h3 id=&#34;del-4-det-olbigatoriske-oppsettet:7e979b591601df796367c2e55b020eac&#34;&gt;Del 4: Det olbigatoriske oppsettet&lt;/h3&gt;
 
@@ -311,16 +345,16 @@ Klarer du å få flere poeng en din motstander?&lt;/p&gt;
     </item>
     
     <item>
-      <title>Kodeklbubben, Processing og Ping-Pong (forslag til løsning)</title>
+      <title>Kodeklubben, Processing og Ping-Pong (forslag til løsning)</title>
       <link>http://sjsd.github.io/post/kodeklubben-processing-pingpong/</link>
       <pubDate>Sun, 03 Apr 2016 00:00:00 +0000</pubDate>
       
       <guid>http://sjsd.github.io/post/kodeklubben-processing-pingpong/</guid>
       <description>
 
-&lt;p&gt;Dette er en kopi og gjennomgang av oppgaven &lt;a href=&#34;http://kodeklubben.github.io/processing/pingpong/pingpong.html&#34; title=&#34;Ping pong for Processing, Kodeklubben&#34;&gt;Ping pong for Processing&lt;/a&gt; laget av Kodeklubben. Min løsning er langt ifra den mest effektive kode. Men den tar utangspunkt i hvert steg i oppgaven og meningen er at man enkelt skal kunne lese seg frem til løsningen.&lt;/p&gt;
+&lt;p&gt;Dette er en kopi og gjennomgang av oppgaven &lt;a href=&#34;http://kodeklubben.github.io/processing/pingpong/pingpong.html&#34; title=&#34;Ping pong for Processing, Kodeklubben&#34;&gt;Ping pong for Processing&lt;/a&gt; laget av Kodeklubben. Min løsning er langt ifra den mest effektive kode. Den tar utangspunkt i hvert steg i oppgaven. Meningen er at man enkelt skal kunne lese seg frem til løsningen.&lt;/p&gt;
 
-&lt;p&gt;Jeg anbefaler at du går igjennom oppgavene &lt;a href=&#34;http://kodeklubben.github.io/processing/pingpong/pingpong.html&#34; title=&#34;Ping pong for Processing, Kodeklubben&#34;&gt;Ping pong for Processing&lt;/a&gt; før du ser på min løsning. Kanskje du finner en bedre vei enn meg. Står du fast kan du ta en titt i min løsning.&lt;/p&gt;
+&lt;p&gt;Jeg anbefaler at du går igjennom oppgavene &lt;a href=&#34;http://kodeklubben.github.io/processing/pingpong/pingpong.html&#34; title=&#34;Ping pong for Processing, Kodeklubben&#34;&gt;Ping pong for Processing&lt;/a&gt; før du ser på min løsning. Kanskje du finner en bedre løsing enn meg. Står du fast kan du ta en titt på hvordan jeghar valgt å løse det.&lt;/p&gt;
 
 &lt;p&gt;Min kode viser den fulle løsningen når du har gjennomført alle deloppgavene.&lt;/p&gt;
 
@@ -339,6 +373,20 @@ float ballYFart = 2;
 float ballRadius = 9;
 float ballDiameter = ballRadius * 2;&lt;/pre&gt;&lt;/p&gt;
 
+&lt;h4 id=&#34;ballx-og-bally:7e979b591601df796367c2e55b020eac&#34;&gt;ballX og ballY&lt;/h4&gt;
+
+&lt;p&gt;Variablene &lt;i&gt;ballX&lt;/i&gt; og &lt;i&gt;ballY&lt;/i&gt; har ingen verdi. Vi bare klargjør variablene for at vi skal kunne bruke dem senere.&lt;/p&gt;
+
+&lt;h4 id=&#34;ballxfart-og-ballyfart:7e979b591601df796367c2e55b020eac&#34;&gt;ballXFart og ballYFart&lt;/h4&gt;
+
+&lt;p&gt;Variabelen &lt;i&gt;ballXFart&lt;/i&gt; bestemmer hastigheten i X-aksen. Dvs. hastigheten ballen har mot venstre eller høyre.&lt;/p&gt;
+
+&lt;p&gt;Variabelen &lt;i&gt;ballYFart&lt;/i&gt; bestemmer hastigheten i Y-aksen. Dvs. hastigheten ballen har opp og ned.&lt;/p&gt;
+
+&lt;h4 id=&#34;ballradius-og-balldiameter:7e979b591601df796367c2e55b020eac&#34;&gt;ballRadius og ballDiameter&lt;/h4&gt;
+
+&lt;p&gt;Variabelen &lt;i&gt;ballRadius&lt;/i&gt; og &lt;i&gt;ballDiameter&lt;/i&gt; bestemmer størrelsen på ballen. Disse variablene bruker vi blant annet til å sjekke om kanten av ballen treffer en rekkert eller kanten av banen.&lt;/p&gt;
+
 &lt;h3 id=&#34;del-2-rekkertene:7e979b591601df796367c2e55b020eac&#34;&gt;Del 2: Rekkertene&lt;/h3&gt;
 
 &lt;p&gt;Vi setter opp variabler for to rekkerter. En som skal plasseres på venstre side og en på høyre side. De har begge samme størrelse. Likevel setter vi opp størrelsen for rekkert 1 og rekkert 2. Årsaken er at vi kommer til å endre størrelsen på rekkertene i spillet.
@@ -348,6 +396,18 @@ float rekkert2Hoyde = 66; // Rekkert 2 sin høyde ved start av spillet
 float rekkertBredde = 5; // Rekkertenes bredde
 float rekkertFart = 4; // Hastighet på rekkertene&lt;/pre&gt;&lt;/p&gt;
 
+&lt;h4 id=&#34;rekkert1hoyde-og-rekkert2hoyde:7e979b591601df796367c2e55b020eac&#34;&gt;rekkert1Hoyde og rekkert2Hoyde&lt;/h4&gt;
+
+&lt;p&gt;Variablene &lt;i&gt;rekkert1Hoyde&lt;/i&gt; og &lt;i&gt;rekkert2Hoyde&lt;/i&gt; bestemmer høyden på de to rekkertene. Vi starter med lik høyde for begge to.&lt;/p&gt;
+
+&lt;h4 id=&#34;rekkertbredde:7e979b591601df796367c2e55b020eac&#34;&gt;rekkertBredde&lt;/h4&gt;
+
+&lt;p&gt;Variabelen &lt;i&gt;rekkertBredde&lt;/i&gt; bestemmer bredden på rekkertene. Her skiller vi ikke mellom de to rekkertene. De får samme bredde og derfor setter vi opp kun en felles variabel.&lt;/p&gt;
+
+&lt;h4 id=&#34;rekkertfart:7e979b591601df796367c2e55b020eac&#34;&gt;rekkertFart&lt;/h4&gt;
+
+&lt;p&gt;Variabelen &lt;i&gt;rekkertFart&lt;/i&gt; bestemmer hvor raskt rekkertene kan bevege seg. Vi lar begge rekkertene bevege seg like raskt og derfor deler de samme variabel.&lt;/p&gt;
+
 &lt;pre&gt;// Rekkert 1 sin plassering i X- og Y-aksen
 float rekkert1X = 20;
 float rekkert1Y = 100;&lt;/pre&gt;
@@ -356,12 +416,20 @@ float rekkert1Y = 100;&lt;/pre&gt;
 float rekkert2X = 575;
 float rekkert2Y = 100;&lt;/pre&gt;
 
+&lt;h4 id=&#34;plassering-av-rekkerter:7e979b591601df796367c2e55b020eac&#34;&gt;Plassering av rekkerter&lt;/h4&gt;
+
+&lt;p&gt;Variablene &lt;i&gt;rekkert1X&lt;/i&gt; og &lt;i&gt;rekkert1Y&lt;/i&gt; plasserer rekkert 1 (for spiller 1) helt til venstre på banen. Men variablene &lt;i&gt;rekkert2X&lt;/i&gt; og &lt;i&gt;rekkert2Y&lt;/i&gt; plasserer rekkert 2 (for spiller 2) helt til høyre på banen.&lt;/p&gt;
+
 &lt;h3 id=&#34;del-3-poeng:7e979b591601df796367c2e55b020eac&#34;&gt;Del 3: Poeng&lt;/h3&gt;
 
 &lt;p&gt;Vi setter poengene til 0 for begge spillerne
 &lt;pre&gt;// Poeng
 int spiller1 = 0;
 int spiller2 = 0;&lt;/pre&gt;&lt;/p&gt;
+
+&lt;h4 id=&#34;spiller1-og-spiller2:7e979b591601df796367c2e55b020eac&#34;&gt;spiller1 og spiller2&lt;/h4&gt;
+
+&lt;p&gt;Variablene &lt;i&gt;spiller1&lt;/i&gt; og &lt;i&gt;spiller2&lt;/i&gt; er poengene de to spillerne har når spillet starter.&lt;/p&gt;
 
 &lt;h3 id=&#34;del-4-det-olbigatoriske-oppsettet:7e979b591601df796367c2e55b020eac&#34;&gt;Del 4: Det olbigatoriske oppsettet&lt;/h3&gt;
 
@@ -612,16 +680,16 @@ Klarer du å få flere poeng en din motstander?&lt;/p&gt;
     </item>
     
     <item>
-      <title>Kodeklbubben, Processing og Ping-Pong (forslag til løsning)</title>
+      <title>Kodeklubben, Processing og Ping-Pong (forslag til løsning)</title>
       <link>http://sjsd.github.io/post/kodeklubben-processing-pingpong/</link>
       <pubDate>Sun, 03 Apr 2016 00:00:00 +0000</pubDate>
       
       <guid>http://sjsd.github.io/post/kodeklubben-processing-pingpong/</guid>
       <description>
 
-&lt;p&gt;Dette er en kopi og gjennomgang av oppgaven &lt;a href=&#34;http://kodeklubben.github.io/processing/pingpong/pingpong.html&#34; title=&#34;Ping pong for Processing, Kodeklubben&#34;&gt;Ping pong for Processing&lt;/a&gt; laget av Kodeklubben. Min løsning er langt ifra den mest effektive kode. Men den tar utangspunkt i hvert steg i oppgaven og meningen er at man enkelt skal kunne lese seg frem til løsningen.&lt;/p&gt;
+&lt;p&gt;Dette er en kopi og gjennomgang av oppgaven &lt;a href=&#34;http://kodeklubben.github.io/processing/pingpong/pingpong.html&#34; title=&#34;Ping pong for Processing, Kodeklubben&#34;&gt;Ping pong for Processing&lt;/a&gt; laget av Kodeklubben. Min løsning er langt ifra den mest effektive kode. Den tar utangspunkt i hvert steg i oppgaven. Meningen er at man enkelt skal kunne lese seg frem til løsningen.&lt;/p&gt;
 
-&lt;p&gt;Jeg anbefaler at du går igjennom oppgavene &lt;a href=&#34;http://kodeklubben.github.io/processing/pingpong/pingpong.html&#34; title=&#34;Ping pong for Processing, Kodeklubben&#34;&gt;Ping pong for Processing&lt;/a&gt; før du ser på min løsning. Kanskje du finner en bedre vei enn meg. Står du fast kan du ta en titt i min løsning.&lt;/p&gt;
+&lt;p&gt;Jeg anbefaler at du går igjennom oppgavene &lt;a href=&#34;http://kodeklubben.github.io/processing/pingpong/pingpong.html&#34; title=&#34;Ping pong for Processing, Kodeklubben&#34;&gt;Ping pong for Processing&lt;/a&gt; før du ser på min løsning. Kanskje du finner en bedre løsing enn meg. Står du fast kan du ta en titt på hvordan jeghar valgt å løse det.&lt;/p&gt;
 
 &lt;p&gt;Min kode viser den fulle løsningen når du har gjennomført alle deloppgavene.&lt;/p&gt;
 
@@ -640,6 +708,20 @@ float ballYFart = 2;
 float ballRadius = 9;
 float ballDiameter = ballRadius * 2;&lt;/pre&gt;&lt;/p&gt;
 
+&lt;h4 id=&#34;ballx-og-bally:7e979b591601df796367c2e55b020eac&#34;&gt;ballX og ballY&lt;/h4&gt;
+
+&lt;p&gt;Variablene &lt;i&gt;ballX&lt;/i&gt; og &lt;i&gt;ballY&lt;/i&gt; har ingen verdi. Vi bare klargjør variablene for at vi skal kunne bruke dem senere.&lt;/p&gt;
+
+&lt;h4 id=&#34;ballxfart-og-ballyfart:7e979b591601df796367c2e55b020eac&#34;&gt;ballXFart og ballYFart&lt;/h4&gt;
+
+&lt;p&gt;Variabelen &lt;i&gt;ballXFart&lt;/i&gt; bestemmer hastigheten i X-aksen. Dvs. hastigheten ballen har mot venstre eller høyre.&lt;/p&gt;
+
+&lt;p&gt;Variabelen &lt;i&gt;ballYFart&lt;/i&gt; bestemmer hastigheten i Y-aksen. Dvs. hastigheten ballen har opp og ned.&lt;/p&gt;
+
+&lt;h4 id=&#34;ballradius-og-balldiameter:7e979b591601df796367c2e55b020eac&#34;&gt;ballRadius og ballDiameter&lt;/h4&gt;
+
+&lt;p&gt;Variabelen &lt;i&gt;ballRadius&lt;/i&gt; og &lt;i&gt;ballDiameter&lt;/i&gt; bestemmer størrelsen på ballen. Disse variablene bruker vi blant annet til å sjekke om kanten av ballen treffer en rekkert eller kanten av banen.&lt;/p&gt;
+
 &lt;h3 id=&#34;del-2-rekkertene:7e979b591601df796367c2e55b020eac&#34;&gt;Del 2: Rekkertene&lt;/h3&gt;
 
 &lt;p&gt;Vi setter opp variabler for to rekkerter. En som skal plasseres på venstre side og en på høyre side. De har begge samme størrelse. Likevel setter vi opp størrelsen for rekkert 1 og rekkert 2. Årsaken er at vi kommer til å endre størrelsen på rekkertene i spillet.
@@ -649,6 +731,18 @@ float rekkert2Hoyde = 66; // Rekkert 2 sin høyde ved start av spillet
 float rekkertBredde = 5; // Rekkertenes bredde
 float rekkertFart = 4; // Hastighet på rekkertene&lt;/pre&gt;&lt;/p&gt;
 
+&lt;h4 id=&#34;rekkert1hoyde-og-rekkert2hoyde:7e979b591601df796367c2e55b020eac&#34;&gt;rekkert1Hoyde og rekkert2Hoyde&lt;/h4&gt;
+
+&lt;p&gt;Variablene &lt;i&gt;rekkert1Hoyde&lt;/i&gt; og &lt;i&gt;rekkert2Hoyde&lt;/i&gt; bestemmer høyden på de to rekkertene. Vi starter med lik høyde for begge to.&lt;/p&gt;
+
+&lt;h4 id=&#34;rekkertbredde:7e979b591601df796367c2e55b020eac&#34;&gt;rekkertBredde&lt;/h4&gt;
+
+&lt;p&gt;Variabelen &lt;i&gt;rekkertBredde&lt;/i&gt; bestemmer bredden på rekkertene. Her skiller vi ikke mellom de to rekkertene. De får samme bredde og derfor setter vi opp kun en felles variabel.&lt;/p&gt;
+
+&lt;h4 id=&#34;rekkertfart:7e979b591601df796367c2e55b020eac&#34;&gt;rekkertFart&lt;/h4&gt;
+
+&lt;p&gt;Variabelen &lt;i&gt;rekkertFart&lt;/i&gt; bestemmer hvor raskt rekkertene kan bevege seg. Vi lar begge rekkertene bevege seg like raskt og derfor deler de samme variabel.&lt;/p&gt;
+
 &lt;pre&gt;// Rekkert 1 sin plassering i X- og Y-aksen
 float rekkert1X = 20;
 float rekkert1Y = 100;&lt;/pre&gt;
@@ -657,12 +751,20 @@ float rekkert1Y = 100;&lt;/pre&gt;
 float rekkert2X = 575;
 float rekkert2Y = 100;&lt;/pre&gt;
 
+&lt;h4 id=&#34;plassering-av-rekkerter:7e979b591601df796367c2e55b020eac&#34;&gt;Plassering av rekkerter&lt;/h4&gt;
+
+&lt;p&gt;Variablene &lt;i&gt;rekkert1X&lt;/i&gt; og &lt;i&gt;rekkert1Y&lt;/i&gt; plasserer rekkert 1 (for spiller 1) helt til venstre på banen. Men variablene &lt;i&gt;rekkert2X&lt;/i&gt; og &lt;i&gt;rekkert2Y&lt;/i&gt; plasserer rekkert 2 (for spiller 2) helt til høyre på banen.&lt;/p&gt;
+
 &lt;h3 id=&#34;del-3-poeng:7e979b591601df796367c2e55b020eac&#34;&gt;Del 3: Poeng&lt;/h3&gt;
 
 &lt;p&gt;Vi setter poengene til 0 for begge spillerne
 &lt;pre&gt;// Poeng
 int spiller1 = 0;
 int spiller2 = 0;&lt;/pre&gt;&lt;/p&gt;
+
+&lt;h4 id=&#34;spiller1-og-spiller2:7e979b591601df796367c2e55b020eac&#34;&gt;spiller1 og spiller2&lt;/h4&gt;
+
+&lt;p&gt;Variablene &lt;i&gt;spiller1&lt;/i&gt; og &lt;i&gt;spiller2&lt;/i&gt; er poengene de to spillerne har når spillet starter.&lt;/p&gt;
 
 &lt;h3 id=&#34;del-4-det-olbigatoriske-oppsettet:7e979b591601df796367c2e55b020eac&#34;&gt;Del 4: Det olbigatoriske oppsettet&lt;/h3&gt;
 
