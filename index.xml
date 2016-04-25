@@ -6,6 +6,8 @@
     <description>Recent content on SJSD - blogg og notater om mine DIY</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>no-nb</language>
+    <managingEditor>helge.johnsen@outlook.com (Helge Johnsen)</managingEditor>
+    <webMaster>helge.johnsen@outlook.com (Helge Johnsen)</webMaster>
     <lastBuildDate>Sun, 03 Apr 2016 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://sjsd.github.io/index.xml" rel="self" type="application/rss+xml" />
     
@@ -13,15 +15,13 @@
       <title>Kodeklubben, Processing og Ping-Pong (forslag til løsning)</title>
       <link>http://sjsd.github.io/post/kodeklubben-processing-pingpong/</link>
       <pubDate>Sun, 03 Apr 2016 00:00:00 +0000</pubDate>
-      
+      <author>helge.johnsen@outlook.com (Helge Johnsen)</author>
       <guid>http://sjsd.github.io/post/kodeklubben-processing-pingpong/</guid>
       <description>
 
-&lt;p&gt;Dette er en kopi og gjennomgang av oppgaven &lt;a href=&#34;http://kodeklubben.github.io/processing/pingpong/pingpong.html&#34; title=&#34;Ping pong for Processing, Kodeklubben&#34;&gt;Ping pong for Processing&lt;/a&gt; laget av Kodeklubben. Min løsning er langt ifra den mest effektive kode. Den tar utangspunkt i hvert steg i oppgaven. Meningen er at man enkelt skal kunne lese seg frem til løsningen.&lt;/p&gt;
+&lt;p&gt;Dette er min gjennomgang av oppgaven &lt;a href=&#34;http://kodeklubben.github.io/processing/pingpong/pingpong.html&#34; title=&#34;Ping pong for Processing, Kodeklubben&#34;&gt;Ping pong for Processing&lt;/a&gt; laget av Kodeklubben. Min løsning er langt ifra den mest effektive koden. Tanken min er at man enkelt skal kunne lese seg frem til løsningen.&lt;/p&gt;
 
-&lt;p&gt;Jeg anbefaler at du går igjennom oppgavene &lt;a href=&#34;http://kodeklubben.github.io/processing/pingpong/pingpong.html&#34; title=&#34;Ping pong for Processing, Kodeklubben&#34;&gt;Ping pong for Processing&lt;/a&gt; før du ser på min løsning. Kanskje du finner en bedre løsing enn meg. Står du fast kan du ta en titt på hvordan jeghar valgt å løse det.&lt;/p&gt;
-
-&lt;p&gt;Min kode viser den fulle løsningen når du har gjennomført alle deloppgavene.&lt;/p&gt;
+&lt;p&gt;Jeg anbefaler at du går igjennom oppgavene &lt;a href=&#34;http://kodeklubben.github.io/processing/pingpong/pingpong.html&#34; title=&#34;Ping pong for Processing, Kodeklubben&#34;&gt;Ping pong for Processing&lt;/a&gt; før du ser på mitt forslag til løsning. Kanskje du finner en bedre løsning enn meg? Står du fast kan du ta en titt på hvordan jeg har valgt å løse utfordringene.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&#34;pingpong.gif&#34; alt=&#34;Animert bilde av PingPong&#34; title=&#34;Processing Pingpong&#34; /&gt;&lt;/p&gt;
 
@@ -40,7 +40,7 @@ float ballDiameter = ballRadius * 2;&lt;/pre&gt;&lt;/p&gt;
 
 &lt;h4 id=&#34;ballx-og-bally:7e979b591601df796367c2e55b020eac&#34;&gt;ballX og ballY&lt;/h4&gt;
 
-&lt;p&gt;Variablene &lt;i&gt;ballX&lt;/i&gt; og &lt;i&gt;ballY&lt;/i&gt; har ingen verdi. Vi bare klargjør variablene for at vi skal kunne bruke dem senere.&lt;/p&gt;
+&lt;p&gt;Variablene &lt;i&gt;ballX&lt;/i&gt; og &lt;i&gt;ballY&lt;/i&gt; har ingen verdi. Vi bare forteller programmet at vi senere kommer til å bruke disse variablene og at de skal være av typen &lt;i&gt;float&lt;/i&gt;.&lt;/p&gt;
 
 &lt;h4 id=&#34;ballxfart-og-ballyfart:7e979b591601df796367c2e55b020eac&#34;&gt;ballXFart og ballYFart&lt;/h4&gt;
 
@@ -98,7 +98,7 @@ int spiller2 = 0;&lt;/pre&gt;&lt;/p&gt;
 
 &lt;h3 id=&#34;del-4-det-olbigatoriske-oppsettet:7e979b591601df796367c2e55b020eac&#34;&gt;Del 4: Det olbigatoriske oppsettet&lt;/h3&gt;
 
-&lt;p&gt;Vi setter størrelsen til 600x300 i henhld til oppgaven. Nå vi vet størrelsen så kan vi også sette ballens startposisjon.&lt;/p&gt;
+&lt;p&gt;Vi setter størrelsen til 600x300 i henhold til oppgaven. Nå vi vet størrelsen så kan vi også sette ballens startposisjon.&lt;/p&gt;
 
 &lt;pre&gt;void setup() {
   size(600,300);
@@ -348,7 +348,7 @@ Klarer du å få flere poeng en din motstander?&lt;/p&gt;
       <title>Keyes CC3000 wifi shield på Arduino Uno</title>
       <link>http://sjsd.github.io/post/keyes-cc3000-wifi-shield/</link>
       <pubDate>Mon, 25 Jan 2016 19:22:25 +0100</pubDate>
-      
+      <author>helge.johnsen@outlook.com (Helge Johnsen)</author>
       <guid>http://sjsd.github.io/post/keyes-cc3000-wifi-shield/</guid>
       <description>
 
@@ -378,7 +378,7 @@ Klarer du å få flere poeng en din motstander?&lt;/p&gt;
       <title>Bluetooth i en gammel FM-radio</title>
       <link>http://sjsd.github.io/post/bluetooth-i-en-gammel-fm-radio/</link>
       <pubDate>Sun, 04 Oct 2015 00:00:00 +0000</pubDate>
-      
+      <author>helge.johnsen@outlook.com (Helge Johnsen)</author>
       <guid>http://sjsd.github.io/post/bluetooth-i-en-gammel-fm-radio/</guid>
       <description>
 
@@ -515,7 +515,7 @@ Klarer du å få flere poeng en din motstander?&lt;/p&gt;
       <title>Arduino Nano, NewPing og HC-SR04</title>
       <link>http://sjsd.github.io/post/arduino-nano-newping-og-hc-sr04/</link>
       <pubDate>Tue, 22 Sep 2015 00:00:00 +0000</pubDate>
-      
+      <author>helge.johnsen@outlook.com (Helge Johnsen)</author>
       <guid>http://sjsd.github.io/post/arduino-nano-newping-og-hc-sr04/</guid>
       <description>
 
@@ -554,7 +554,7 @@ Klarer du å få flere poeng en din motstander?&lt;/p&gt;
       <title>Koble Arduino til internett via USB</title>
       <link>http://sjsd.github.io/post/koble-arduino-til-internett-via-usb/</link>
       <pubDate>Fri, 11 Sep 2015 00:00:00 +0000</pubDate>
-      
+      <author>helge.johnsen@outlook.com (Helge Johnsen)</author>
       <guid>http://sjsd.github.io/post/koble-arduino-til-internett-via-usb/</guid>
       <description>
 
@@ -576,7 +576,7 @@ Klarer du å få flere poeng en din motstander?&lt;/p&gt;
       <title>Arduino og HC-SR04 (ultrasonisk sensor)</title>
       <link>http://sjsd.github.io/post/arduino-og-hc-sr04-ultrasonisk-sensor/</link>
       <pubDate>Thu, 03 Sep 2015 00:00:00 +0000</pubDate>
-      
+      <author>helge.johnsen@outlook.com (Helge Johnsen)</author>
       <guid>http://sjsd.github.io/post/arduino-og-hc-sr04-ultrasonisk-sensor/</guid>
       <description>
 
@@ -618,7 +618,7 @@ Klarer du å få flere poeng en din motstander?&lt;/p&gt;
       <title>Arduino og Ping (ultrasonisk sensor)</title>
       <link>http://sjsd.github.io/post/arduino-og-ping-ultrasonisk-sensor/</link>
       <pubDate>Tue, 01 Sep 2015 00:00:00 +0000</pubDate>
-      
+      <author>helge.johnsen@outlook.com (Helge Johnsen)</author>
       <guid>http://sjsd.github.io/post/arduino-og-ping-ultrasonisk-sensor/</guid>
       <description>
 
@@ -659,7 +659,7 @@ Klarer du å få flere poeng en din motstander?&lt;/p&gt;
       <title>Legg til hendeslessporing for Google Analytics til Ninja Blocks</title>
       <link>http://sjsd.github.io/post/legg-til-hendeslessporing-for-google-analytics-til-ninja-block/</link>
       <pubDate>Mon, 22 Dec 2014 00:00:00 +0000</pubDate>
-      
+      <author>helge.johnsen@outlook.com (Helge Johnsen)</author>
       <guid>http://sjsd.github.io/post/legg-til-hendeslessporing-for-google-analytics-til-ninja-block/</guid>
       <description>
 
@@ -864,7 +864,7 @@ v=1&amp;amp;tid=UA-XXX-Y&amp;amp;cid=555&amp;amp;t=event&amp;amp;ec=Bevegelse&am
       <title>Programmere ATTiny13a via Arduino</title>
       <link>http://sjsd.github.io/post/programmere-attiny13a-via-arduino/</link>
       <pubDate>Sat, 27 Sep 2014 00:00:00 +0000</pubDate>
-      
+      <author>helge.johnsen@outlook.com (Helge Johnsen)</author>
       <guid>http://sjsd.github.io/post/programmere-attiny13a-via-arduino/</guid>
       <description>
 
@@ -1005,7 +1005,7 @@ v=1&amp;amp;tid=UA-XXX-Y&amp;amp;cid=555&amp;amp;t=event&amp;amp;ec=Bevegelse&am
       <title>Serial input (video)</title>
       <link>http://sjsd.github.io/post/serial-input-video/</link>
       <pubDate>Sat, 13 Apr 2013 00:00:00 +0000</pubDate>
-      
+      <author>helge.johnsen@outlook.com (Helge Johnsen)</author>
       <guid>http://sjsd.github.io/post/serial-input-video/</guid>
       <description>&lt;iframe width=&#34;700&#34; height=&#34;424&#34; src=&#34;https://www.youtube.com/embed/7Se3AXBjWMM&#34; frameborder=&#34;0&#34; allowfullscreen&gt;&lt;/iframe&gt;
 </description>
@@ -1015,7 +1015,7 @@ v=1&amp;amp;tid=UA-XXX-Y&amp;amp;cid=555&amp;amp;t=event&amp;amp;ec=Bevegelse&am
       <title>Serial input</title>
       <link>http://sjsd.github.io/post/serial-input/</link>
       <pubDate>Fri, 12 Apr 2013 00:00:00 +0000</pubDate>
-      
+      <author>helge.johnsen@outlook.com (Helge Johnsen)</author>
       <guid>http://sjsd.github.io/post/serial-input/</guid>
       <description>&lt;p&gt;Since I only have some LEDs to play with I had to be “creative”. So I have tried different ways to program my LEDs to light.&lt;/p&gt;
 

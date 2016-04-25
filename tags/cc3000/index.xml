@@ -6,6 +6,8 @@
     <description>Recent content in Cc3000 on SJSD - blogg og notater om mine DIY</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>no-nb</language>
+    <managingEditor>helge.johnsen@outlook.com (Helge Johnsen)</managingEditor>
+    <webMaster>helge.johnsen@outlook.com (Helge Johnsen)</webMaster>
     <lastBuildDate>Mon, 25 Jan 2016 19:22:25 +0100</lastBuildDate>
     <atom:link href="http://sjsd.github.io/tags/cc3000/index.xml" rel="self" type="application/rss+xml" />
     
@@ -13,7 +15,7 @@
       <title>Keyes CC3000 wifi shield på Arduino Uno</title>
       <link>http://sjsd.github.io/post/keyes-cc3000-wifi-shield/</link>
       <pubDate>Mon, 25 Jan 2016 19:22:25 +0100</pubDate>
-      
+      <author>helge.johnsen@outlook.com (Helge Johnsen)</author>
       <guid>http://sjsd.github.io/post/keyes-cc3000-wifi-shield/</guid>
       <description>
 

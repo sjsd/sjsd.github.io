@@ -30,11 +30,9 @@
   <h1><a href="http://sjsd.github.io/post/kodeklubben-processing-pingpong/" title="Kodeklubben, Processing og Ping-Pong (forslag til løsning)">Kodeklubben, Processing og Ping-Pong (forslag til løsning)</a></h1>
   
 
-<p>Dette er en kopi og gjennomgang av oppgaven <a href="http://kodeklubben.github.io/processing/pingpong/pingpong.html" title="Ping pong for Processing, Kodeklubben">Ping pong for Processing</a> laget av Kodeklubben. Min løsning er langt ifra den mest effektive kode. Den tar utangspunkt i hvert steg i oppgaven. Meningen er at man enkelt skal kunne lese seg frem til løsningen.</p>
+<p>Dette er min gjennomgang av oppgaven <a href="http://kodeklubben.github.io/processing/pingpong/pingpong.html" title="Ping pong for Processing, Kodeklubben">Ping pong for Processing</a> laget av Kodeklubben. Min løsning er langt ifra den mest effektive koden. Tanken min er at man enkelt skal kunne lese seg frem til løsningen.</p>
 
-<p>Jeg anbefaler at du går igjennom oppgavene <a href="http://kodeklubben.github.io/processing/pingpong/pingpong.html" title="Ping pong for Processing, Kodeklubben">Ping pong for Processing</a> før du ser på min løsning. Kanskje du finner en bedre løsing enn meg. Står du fast kan du ta en titt på hvordan jeghar valgt å løse det.</p>
-
-<p>Min kode viser den fulle løsningen når du har gjennomført alle deloppgavene.</p>
+<p>Jeg anbefaler at du går igjennom oppgavene <a href="http://kodeklubben.github.io/processing/pingpong/pingpong.html" title="Ping pong for Processing, Kodeklubben">Ping pong for Processing</a> før du ser på mitt forslag til løsning. Kanskje du finner en bedre løsning enn meg? Står du fast kan du ta en titt på hvordan jeg har valgt å løse utfordringene.</p>
 
 <p><img src="pingpong.gif" alt="Animert bilde av PingPong" title="Processing Pingpong" /></p>
 
@@ -53,7 +51,7 @@ float ballDiameter = ballRadius * 2;</pre></p>
 
 <h4 id="ballx-og-bally:7e979b591601df796367c2e55b020eac">ballX og ballY</h4>
 
-<p>Variablene <i>ballX</i> og <i>ballY</i> har ingen verdi. Vi bare klargjør variablene for at vi skal kunne bruke dem senere.</p>
+<p>Variablene <i>ballX</i> og <i>ballY</i> har ingen verdi. Vi bare forteller programmet at vi senere kommer til å bruke disse variablene og at de skal være av typen <i>float</i>.</p>
 
 <h4 id="ballxfart-og-ballyfart:7e979b591601df796367c2e55b020eac">ballXFart og ballYFart</h4>
 
@@ -111,7 +109,7 @@ int spiller2 = 0;</pre></p>
 
 <h3 id="del-4-det-olbigatoriske-oppsettet:7e979b591601df796367c2e55b020eac">Del 4: Det olbigatoriske oppsettet</h3>
 
-<p>Vi setter størrelsen til 600x300 i henhld til oppgaven. Nå vi vet størrelsen så kan vi også sette ballens startposisjon.</p>
+<p>Vi setter størrelsen til 600x300 i henhold til oppgaven. Nå vi vet størrelsen så kan vi også sette ballens startposisjon.</p>
 
 <pre>void setup() {
   size(600,300);
