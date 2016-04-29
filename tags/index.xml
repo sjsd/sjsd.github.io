@@ -8,10 +8,139 @@
     <language>no-nb</language>
     <managingEditor>helge.johnsen@outlook.com (Helge Johnsen)</managingEditor>
     <webMaster>helge.johnsen@outlook.com (Helge Johnsen)</webMaster>
-    <lastBuildDate>Sun, 04 Oct 2015 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 29 Apr 2016 17:31:44 +0200</lastBuildDate>
     <atom:link href="http://sjsd.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>Arduino lydsensor</title>
+      <link>http://sjsd.github.io/post/arduino-sounddetector/</link>
+      <pubDate>Fri, 29 Apr 2016 17:31:44 +0200</pubDate>
+      <author>helge.johnsen@outlook.com (Helge Johnsen)</author>
+      <guid>http://sjsd.github.io/post/arduino-sounddetector/</guid>
+      <description>
+
+&lt;p&gt;Dette innlegget er en del av et større prosjekt jeg jobber med. Dette innlegget har jeg skrevet mest som et notat til meg selv.&lt;/p&gt;
+
+&lt;h2 id=&#34;arduino-med-lydsensor:a9e8a9351c137e733c312648c9a0c333&#34;&gt;Arduino med lydsensor&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&#34;soundsensor.jpg&#34;&gt;&lt;br /&gt;
+Dette er en enkel lydsensor. Den ikke kan si noe om lydstyrken eller hva slags lyd den reagerer på. Det mest korrekte er å si at den reagerer på volum fremfor lyd. Man kan justere en grenseverdi for styrken på volumet. Altså hvor høy lyden må være før den reagerer og sender fra seg et signal.&lt;/p&gt;
+
+&lt;p&gt;Når sensoren reagerer på et lyd, dvs. den reagerer på et angitt volum, så vil den sende fra seg et signal. Sensoren er koblet til en digital inngang på Arduinoen.&lt;/p&gt;
+
+&lt;h3 id=&#34;koden:a9e8a9351c137e733c312648c9a0c333&#34;&gt;Koden&lt;/h3&gt;
+
+&lt;p&gt;Denne koden er veldig enkel. Jeg har koblet sensoren til digital ïnngang 2 og en LED til digital utgang 7.
+&lt;pre&gt;int ledPin = 7;
+int inPin = 2;
+int volume = 0;&lt;/pre&gt;&lt;/p&gt;
+
+&lt;pre&gt;void setup() {
+  Serial.begin(9600);
+  pinMode(ledPin, OUTPUT);
+  pinMode(inPin, INPUT);
+  digitalWrite(ledPin, LOW);
+}&lt;/pre&gt;
+
+&lt;pre&gt;void loop() {
+  volume = digitalRead(inPin);
+  if (volume &gt; 0) {
+    Serial.println(volume);
+    digitalWrite(ledPin, HIGH);
+    delay(50);
+    digitalWrite(ledPin,LOW);
+  }
+}&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Arduino lydsensor</title>
+      <link>http://sjsd.github.io/post/arduino-sounddetector/</link>
+      <pubDate>Fri, 29 Apr 2016 17:31:44 +0200</pubDate>
+      <author>helge.johnsen@outlook.com (Helge Johnsen)</author>
+      <guid>http://sjsd.github.io/post/arduino-sounddetector/</guid>
+      <description>
+
+&lt;p&gt;Dette innlegget er en del av et større prosjekt jeg jobber med. Dette innlegget har jeg skrevet mest som et notat til meg selv.&lt;/p&gt;
+
+&lt;h2 id=&#34;arduino-med-lydsensor:a9e8a9351c137e733c312648c9a0c333&#34;&gt;Arduino med lydsensor&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&#34;soundsensor.jpg&#34;&gt;&lt;br /&gt;
+Dette er en enkel lydsensor. Den ikke kan si noe om lydstyrken eller hva slags lyd den reagerer på. Det mest korrekte er å si at den reagerer på volum fremfor lyd. Man kan justere en grenseverdi for styrken på volumet. Altså hvor høy lyden må være før den reagerer og sender fra seg et signal.&lt;/p&gt;
+
+&lt;p&gt;Når sensoren reagerer på et lyd, dvs. den reagerer på et angitt volum, så vil den sende fra seg et signal. Sensoren er koblet til en digital inngang på Arduinoen.&lt;/p&gt;
+
+&lt;h3 id=&#34;koden:a9e8a9351c137e733c312648c9a0c333&#34;&gt;Koden&lt;/h3&gt;
+
+&lt;p&gt;Denne koden er veldig enkel. Jeg har koblet sensoren til digital ïnngang 2 og en LED til digital utgang 7.
+&lt;pre&gt;int ledPin = 7;
+int inPin = 2;
+int volume = 0;&lt;/pre&gt;&lt;/p&gt;
+
+&lt;pre&gt;void setup() {
+  Serial.begin(9600);
+  pinMode(ledPin, OUTPUT);
+  pinMode(inPin, INPUT);
+  digitalWrite(ledPin, LOW);
+}&lt;/pre&gt;
+
+&lt;pre&gt;void loop() {
+  volume = digitalRead(inPin);
+  if (volume &gt; 0) {
+    Serial.println(volume);
+    digitalWrite(ledPin, HIGH);
+    delay(50);
+    digitalWrite(ledPin,LOW);
+  }
+}&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Arduino lydsensor</title>
+      <link>http://sjsd.github.io/post/arduino-sounddetector/</link>
+      <pubDate>Fri, 29 Apr 2016 17:31:44 +0200</pubDate>
+      <author>helge.johnsen@outlook.com (Helge Johnsen)</author>
+      <guid>http://sjsd.github.io/post/arduino-sounddetector/</guid>
+      <description>
+
+&lt;p&gt;Dette innlegget er en del av et større prosjekt jeg jobber med. Dette innlegget har jeg skrevet mest som et notat til meg selv.&lt;/p&gt;
+
+&lt;h2 id=&#34;arduino-med-lydsensor:a9e8a9351c137e733c312648c9a0c333&#34;&gt;Arduino med lydsensor&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&#34;soundsensor.jpg&#34;&gt;&lt;br /&gt;
+Dette er en enkel lydsensor. Den ikke kan si noe om lydstyrken eller hva slags lyd den reagerer på. Det mest korrekte er å si at den reagerer på volum fremfor lyd. Man kan justere en grenseverdi for styrken på volumet. Altså hvor høy lyden må være før den reagerer og sender fra seg et signal.&lt;/p&gt;
+
+&lt;p&gt;Når sensoren reagerer på et lyd, dvs. den reagerer på et angitt volum, så vil den sende fra seg et signal. Sensoren er koblet til en digital inngang på Arduinoen.&lt;/p&gt;
+
+&lt;h3 id=&#34;koden:a9e8a9351c137e733c312648c9a0c333&#34;&gt;Koden&lt;/h3&gt;
+
+&lt;p&gt;Denne koden er veldig enkel. Jeg har koblet sensoren til digital ïnngang 2 og en LED til digital utgang 7.
+&lt;pre&gt;int ledPin = 7;
+int inPin = 2;
+int volume = 0;&lt;/pre&gt;&lt;/p&gt;
+
+&lt;pre&gt;void setup() {
+  Serial.begin(9600);
+  pinMode(ledPin, OUTPUT);
+  pinMode(inPin, INPUT);
+  digitalWrite(ledPin, LOW);
+}&lt;/pre&gt;
+
+&lt;pre&gt;void loop() {
+  volume = digitalRead(inPin);
+  if (volume &gt; 0) {
+    Serial.println(volume);
+    digitalWrite(ledPin, HIGH);
+    delay(50);
+    digitalWrite(ledPin,LOW);
+  }
+}&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Bluetooth i en gammel FM-radio</title>
       <link>http://sjsd.github.io/post/bluetooth-i-en-gammel-fm-radio/</link>
       <pubDate>Sun, 04 Oct 2015 00:00:00 +0000</pubDate>
@@ -728,129 +857,6 @@
 &lt;p&gt;Med en enkel formel så kan Arduinoen endre svaret til noe mer lesbart, som f.eks. antall centimeter fra Ping-en og til et objekt foran.&lt;/p&gt;
 
 &lt;p&gt;Fordelen er at den er enkel å bruke og man kan selv sette terskselverdier for handlinger basert på avstander. Ulempen er at objektet må være rett foran Ping-en. Jeg har gjort noen forsøk på f.eks. å holde et ark i 45 graders vinkel. Da klarer ikke Ping-en å måle avstanden. Antageligvis pga at signalet blir reflektert vekk og ikke tilbake.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Arduino og Ping (ultrasonisk sensor)</title>
-      <link>http://sjsd.github.io/post/arduino-og-ping-ultrasonisk-sensor/</link>
-      <pubDate>Tue, 01 Sep 2015 00:00:00 +0000</pubDate>
-      <author>helge.johnsen@outlook.com (Helge Johnsen)</author>
-      <guid>http://sjsd.github.io/post/arduino-og-ping-ultrasonisk-sensor/</guid>
-      <description>
-
-&lt;p&gt;Dette er helt grunnleggende hvordan man kobler opp en Arduino og en Ping. Koden jeg har brukt er basert på standard eksempel fra Arduino. Eneste jeg har gjort er å legge til tre LED som lyser basert på avstand.&lt;/p&gt;
-
-&lt;p&gt;Jeg har lånt meg en Ping og satt opp en enkelt test. Dette er en liten del av et litt større prosjekt jeg planlegger. Flere innlegg vil nok komme etter hvert.&lt;/p&gt;
-
-&lt;h2 id=&#34;tl-dr:b6dccdf5da1a9e2ff64c9d8f617c8f2f&#34;&gt;TL;DR&lt;/h2&gt;
-
-&lt;p&gt;Når et objekt er lengre unna enn 26 cm så vil grønn LED lyse. Når et objekt er mellom 26 og 10 cm unna så vil orange LED lyse. Hvis et objekt er 10cm eller nærmere så vil rød LED lyse. Avstanden måles med Ping (en ultrasonisk sensor).&lt;/p&gt;
-
-&lt;h2 id=&#34;skisse:b6dccdf5da1a9e2ff64c9d8f617c8f2f&#34;&gt;Skisse&lt;/h2&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://helgejohnsen.files.wordpress.com/2015/09/ping_bb.png?w=700&amp;amp;h=878&#34; alt=&#34;Arduino Ping&#34; /&gt;
-&lt;/p&gt;
-
-&lt;h2 id=&#34;kode:b6dccdf5da1a9e2ff64c9d8f617c8f2f&#34;&gt;Kode&lt;/h2&gt;
-
-&lt;p&gt;Dessverre så får jeg ikke limt inn koden og stilsatt den på en slik måte at den er lettlest. Dette pga restriksjoner knyttet til WordPress (siden jeg ikke hoster WordPress selv). Men jeg har lagt ut koden på Github for den som ønsker å laste den ned.&lt;/p&gt;
-
-&lt;p&gt;Se og last ned koden her &lt;a href=&#34;https://gist.github.com/sjsd/cf9ea98577b9b277143c&#34;&gt;https://gist.github.com/sjsd/cf9ea98577b9b277143c&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;konklusjon:b6dccdf5da1a9e2ff64c9d8f617c8f2f&#34;&gt;Konklusjon&lt;/h2&gt;
-
-&lt;p&gt;En Ping (eller en ultrasonisk sensor) er en veldig enkelt sak å sette opp. Den jeg har brukt her har tre pinne (en for 5V, jord og signal). Man sender inn et signal og får straks svar tilbake på samme pinne (utgang/inngang på Arduinoen). I koden jeg har brukes inn- utgang 7. Rett etter man har sendt et signal endrer man utgangen til en inngang som er klar for å ta imot signalet.&lt;/p&gt;
-
-&lt;p&gt;Med en enkel formel så kan Arduinoen endre svaret til noe mer lesbart, som f.eks. antall centimeter fra Ping-en og til et objekt foran.&lt;/p&gt;
-
-&lt;p&gt;Fordelen er at den er enkel å bruke og man kan selv sette terskselverdier for handlinger basert på avstander. Ulempen er at objektet må være rett foran Ping-en. Jeg har gjort noen forsøk på f.eks. å holde et ark i 45 graders vinkel. Da klarer ikke Ping-en å måle avstanden. Antageligvis pga at signalet blir reflektert vekk og ikke tilbake.&lt;/p&gt;
-
-&lt;p&gt;Likevel er jeg sikker på at en ultrasonisk sensor er det mest anvendelige i prosjektet mitt.&lt;/p&gt;
-
-&lt;p&gt;Ping-en jeg har brukt er en lånt enhet. Selv så venter jeg på en jeg har bestilt billig fra eBay. Den har fire pinner. Forskjellen er at man slipper å endre pinne 7 mellom å sende et signal og ta imot et signal. Man bruker da en egen inngang og en egen utgang for å sende eller motta signal. Ellers er prinsippet det samme.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Arduino og Ping (ultrasonisk sensor)</title>
-      <link>http://sjsd.github.io/post/arduino-og-ping-ultrasonisk-sensor/</link>
-      <pubDate>Tue, 01 Sep 2015 00:00:00 +0000</pubDate>
-      <author>helge.johnsen@outlook.com (Helge Johnsen)</author>
-      <guid>http://sjsd.github.io/post/arduino-og-ping-ultrasonisk-sensor/</guid>
-      <description>
-
-&lt;p&gt;Dette er helt grunnleggende hvordan man kobler opp en Arduino og en Ping. Koden jeg har brukt er basert på standard eksempel fra Arduino. Eneste jeg har gjort er å legge til tre LED som lyser basert på avstand.&lt;/p&gt;
-
-&lt;p&gt;Jeg har lånt meg en Ping og satt opp en enkelt test. Dette er en liten del av et litt større prosjekt jeg planlegger. Flere innlegg vil nok komme etter hvert.&lt;/p&gt;
-
-&lt;h2 id=&#34;tl-dr:b6dccdf5da1a9e2ff64c9d8f617c8f2f&#34;&gt;TL;DR&lt;/h2&gt;
-
-&lt;p&gt;Når et objekt er lengre unna enn 26 cm så vil grønn LED lyse. Når et objekt er mellom 26 og 10 cm unna så vil orange LED lyse. Hvis et objekt er 10cm eller nærmere så vil rød LED lyse. Avstanden måles med Ping (en ultrasonisk sensor).&lt;/p&gt;
-
-&lt;h2 id=&#34;skisse:b6dccdf5da1a9e2ff64c9d8f617c8f2f&#34;&gt;Skisse&lt;/h2&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://helgejohnsen.files.wordpress.com/2015/09/ping_bb.png?w=700&amp;amp;h=878&#34; alt=&#34;Arduino Ping&#34; /&gt;
-&lt;/p&gt;
-
-&lt;h2 id=&#34;kode:b6dccdf5da1a9e2ff64c9d8f617c8f2f&#34;&gt;Kode&lt;/h2&gt;
-
-&lt;p&gt;Dessverre så får jeg ikke limt inn koden og stilsatt den på en slik måte at den er lettlest. Dette pga restriksjoner knyttet til WordPress (siden jeg ikke hoster WordPress selv). Men jeg har lagt ut koden på Github for den som ønsker å laste den ned.&lt;/p&gt;
-
-&lt;p&gt;Se og last ned koden her &lt;a href=&#34;https://gist.github.com/sjsd/cf9ea98577b9b277143c&#34;&gt;https://gist.github.com/sjsd/cf9ea98577b9b277143c&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;konklusjon:b6dccdf5da1a9e2ff64c9d8f617c8f2f&#34;&gt;Konklusjon&lt;/h2&gt;
-
-&lt;p&gt;En Ping (eller en ultrasonisk sensor) er en veldig enkelt sak å sette opp. Den jeg har brukt her har tre pinne (en for 5V, jord og signal). Man sender inn et signal og får straks svar tilbake på samme pinne (utgang/inngang på Arduinoen). I koden jeg har brukes inn- utgang 7. Rett etter man har sendt et signal endrer man utgangen til en inngang som er klar for å ta imot signalet.&lt;/p&gt;
-
-&lt;p&gt;Med en enkel formel så kan Arduinoen endre svaret til noe mer lesbart, som f.eks. antall centimeter fra Ping-en og til et objekt foran.&lt;/p&gt;
-
-&lt;p&gt;Fordelen er at den er enkel å bruke og man kan selv sette terskselverdier for handlinger basert på avstander. Ulempen er at objektet må være rett foran Ping-en. Jeg har gjort noen forsøk på f.eks. å holde et ark i 45 graders vinkel. Da klarer ikke Ping-en å måle avstanden. Antageligvis pga at signalet blir reflektert vekk og ikke tilbake.&lt;/p&gt;
-
-&lt;p&gt;Likevel er jeg sikker på at en ultrasonisk sensor er det mest anvendelige i prosjektet mitt.&lt;/p&gt;
-
-&lt;p&gt;Ping-en jeg har brukt er en lånt enhet. Selv så venter jeg på en jeg har bestilt billig fra eBay. Den har fire pinner. Forskjellen er at man slipper å endre pinne 7 mellom å sende et signal og ta imot et signal. Man bruker da en egen inngang og en egen utgang for å sende eller motta signal. Ellers er prinsippet det samme.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Arduino og Ping (ultrasonisk sensor)</title>
-      <link>http://sjsd.github.io/post/arduino-og-ping-ultrasonisk-sensor/</link>
-      <pubDate>Tue, 01 Sep 2015 00:00:00 +0000</pubDate>
-      <author>helge.johnsen@outlook.com (Helge Johnsen)</author>
-      <guid>http://sjsd.github.io/post/arduino-og-ping-ultrasonisk-sensor/</guid>
-      <description>
-
-&lt;p&gt;Dette er helt grunnleggende hvordan man kobler opp en Arduino og en Ping. Koden jeg har brukt er basert på standard eksempel fra Arduino. Eneste jeg har gjort er å legge til tre LED som lyser basert på avstand.&lt;/p&gt;
-
-&lt;p&gt;Jeg har lånt meg en Ping og satt opp en enkelt test. Dette er en liten del av et litt større prosjekt jeg planlegger. Flere innlegg vil nok komme etter hvert.&lt;/p&gt;
-
-&lt;h2 id=&#34;tl-dr:b6dccdf5da1a9e2ff64c9d8f617c8f2f&#34;&gt;TL;DR&lt;/h2&gt;
-
-&lt;p&gt;Når et objekt er lengre unna enn 26 cm så vil grønn LED lyse. Når et objekt er mellom 26 og 10 cm unna så vil orange LED lyse. Hvis et objekt er 10cm eller nærmere så vil rød LED lyse. Avstanden måles med Ping (en ultrasonisk sensor).&lt;/p&gt;
-
-&lt;h2 id=&#34;skisse:b6dccdf5da1a9e2ff64c9d8f617c8f2f&#34;&gt;Skisse&lt;/h2&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://helgejohnsen.files.wordpress.com/2015/09/ping_bb.png?w=700&amp;amp;h=878&#34; alt=&#34;Arduino Ping&#34; /&gt;
-&lt;/p&gt;
-
-&lt;h2 id=&#34;kode:b6dccdf5da1a9e2ff64c9d8f617c8f2f&#34;&gt;Kode&lt;/h2&gt;
-
-&lt;p&gt;Dessverre så får jeg ikke limt inn koden og stilsatt den på en slik måte at den er lettlest. Dette pga restriksjoner knyttet til WordPress (siden jeg ikke hoster WordPress selv). Men jeg har lagt ut koden på Github for den som ønsker å laste den ned.&lt;/p&gt;
-
-&lt;p&gt;Se og last ned koden her &lt;a href=&#34;https://gist.github.com/sjsd/cf9ea98577b9b277143c&#34;&gt;https://gist.github.com/sjsd/cf9ea98577b9b277143c&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;konklusjon:b6dccdf5da1a9e2ff64c9d8f617c8f2f&#34;&gt;Konklusjon&lt;/h2&gt;
-
-&lt;p&gt;En Ping (eller en ultrasonisk sensor) er en veldig enkelt sak å sette opp. Den jeg har brukt her har tre pinne (en for 5V, jord og signal). Man sender inn et signal og får straks svar tilbake på samme pinne (utgang/inngang på Arduinoen). I koden jeg har brukes inn- utgang 7. Rett etter man har sendt et signal endrer man utgangen til en inngang som er klar for å ta imot signalet.&lt;/p&gt;
-
-&lt;p&gt;Med en enkel formel så kan Arduinoen endre svaret til noe mer lesbart, som f.eks. antall centimeter fra Ping-en og til et objekt foran.&lt;/p&gt;
-
-&lt;p&gt;Fordelen er at den er enkel å bruke og man kan selv sette terskselverdier for handlinger basert på avstander. Ulempen er at objektet må være rett foran Ping-en. Jeg har gjort noen forsøk på f.eks. å holde et ark i 45 graders vinkel. Da klarer ikke Ping-en å måle avstanden. Antageligvis pga at signalet blir reflektert vekk og ikke tilbake.&lt;/p&gt;
-
-&lt;p&gt;Likevel er jeg sikker på at en ultrasonisk sensor er det mest anvendelige i prosjektet mitt.&lt;/p&gt;
-
-&lt;p&gt;Ping-en jeg har brukt er en lånt enhet. Selv så venter jeg på en jeg har bestilt billig fra eBay. Den har fire pinner. Forskjellen er at man slipper å endre pinne 7 mellom å sende et signal og ta imot et signal. Man bruker da en egen inngang og en egen utgang for å sende eller motta signal. Ellers er prinsippet det samme.&lt;/p&gt;
 </description>
     </item>
     

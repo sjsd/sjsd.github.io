@@ -1,0 +1,71 @@
+<!doctype html> 
+<html lang="no-nb"> 
+<head>
+  <meta charset="utf-8">
+  <title>SJSD - blogg og notater om mine DIY</title>
+  <meta name="author" content="Helge Johnsen">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  
+  <link rel="icon" href="/favicon.png" />
+  <link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png" />
+  
+  
+  <link rel="stylesheet" href="/style.css" />
+  <link href='//fonts.googleapis.com/css?family=Merriweather:400,700' rel='stylesheet' type='text/css'>
+
+</head>
+<body>
+
+  <div class="wrap">
+    <header class="mb">
+      <h1 class="h2 m-0"><a href="/">SJSD - blogg og notater om mine DIY</a></h1>
+      <p></p>
+    </header>
+
+
+<main>
+<article class="post">
+  <h1><a href="http://sjsd.github.io/post/arduino-sounddetector/" title="Arduino lydsensor">Arduino lydsensor</a></h1>
+  
+
+<p>Dette innlegget er en del av et større prosjekt jeg jobber med. Dette innlegget har jeg skrevet mest som et notat til meg selv.</p>
+
+<h2 id="arduino-med-lydsensor:a9e8a9351c137e733c312648c9a0c333">Arduino med lydsensor</h2>
+
+<p><img src="soundsensor.jpg"><br />
+Dette er en enkel lydsensor. Den ikke kan si noe om lydstyrken eller hva slags lyd den reagerer på. Det mest korrekte er å si at den reagerer på volum fremfor lyd. Man kan justere en grenseverdi for styrken på volumet. Altså hvor høy lyden må være før den reagerer og sender fra seg et signal.</p>
+
+<p>Når sensoren reagerer på et lyd, dvs. den reagerer på et angitt volum, så vil den sende fra seg et signal. Sensoren er koblet til en digital inngang på Arduinoen.</p>
+
+<h3 id="koden:a9e8a9351c137e733c312648c9a0c333">Koden</h3>
+
+<p>Denne koden er veldig enkel. Jeg har koblet sensoren til digital ïnngang 2 og en LED til digital utgang 7.
+<pre>int ledPin = 7;
+int inPin = 2;
+int volume = 0;</pre></p>
+
+<pre>void setup() {
+  Serial.begin(9600);
+  pinMode(ledPin, OUTPUT);
+  pinMode(inPin, INPUT);
+  digitalWrite(ledPin, LOW);
+}</pre>
+
+<pre>void loop() {
+  volume = digitalRead(inPin);
+  if (volume > 0) {
+    Serial.println(volume);
+    digitalWrite(ledPin, HIGH);
+    delay(50);
+    digitalWrite(ledPin,LOW);
+  }
+}</pre>
+
+  <p class="small gray"><time datetime="2016-04-50">Apr 04, 2016</time></p>
+</article>
+</main>
+</div>
+</body>
+</html>

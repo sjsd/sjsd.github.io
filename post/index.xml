@@ -8,8 +8,51 @@
     <language>no-nb</language>
     <managingEditor>helge.johnsen@outlook.com (Helge Johnsen)</managingEditor>
     <webMaster>helge.johnsen@outlook.com (Helge Johnsen)</webMaster>
-    <lastBuildDate>Sun, 03 Apr 2016 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 29 Apr 2016 17:31:44 +0200</lastBuildDate>
     <atom:link href="http://sjsd.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Arduino lydsensor</title>
+      <link>http://sjsd.github.io/post/arduino-sounddetector/</link>
+      <pubDate>Fri, 29 Apr 2016 17:31:44 +0200</pubDate>
+      <author>helge.johnsen@outlook.com (Helge Johnsen)</author>
+      <guid>http://sjsd.github.io/post/arduino-sounddetector/</guid>
+      <description>
+
+&lt;p&gt;Dette innlegget er en del av et større prosjekt jeg jobber med. Dette innlegget har jeg skrevet mest som et notat til meg selv.&lt;/p&gt;
+
+&lt;h2 id=&#34;arduino-med-lydsensor:a9e8a9351c137e733c312648c9a0c333&#34;&gt;Arduino med lydsensor&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&#34;soundsensor.jpg&#34;&gt;&lt;br /&gt;
+Dette er en enkel lydsensor. Den ikke kan si noe om lydstyrken eller hva slags lyd den reagerer på. Det mest korrekte er å si at den reagerer på volum fremfor lyd. Man kan justere en grenseverdi for styrken på volumet. Altså hvor høy lyden må være før den reagerer og sender fra seg et signal.&lt;/p&gt;
+
+&lt;p&gt;Når sensoren reagerer på et lyd, dvs. den reagerer på et angitt volum, så vil den sende fra seg et signal. Sensoren er koblet til en digital inngang på Arduinoen.&lt;/p&gt;
+
+&lt;h3 id=&#34;koden:a9e8a9351c137e733c312648c9a0c333&#34;&gt;Koden&lt;/h3&gt;
+
+&lt;p&gt;Denne koden er veldig enkel. Jeg har koblet sensoren til digital ïnngang 2 og en LED til digital utgang 7.
+&lt;pre&gt;int ledPin = 7;
+int inPin = 2;
+int volume = 0;&lt;/pre&gt;&lt;/p&gt;
+
+&lt;pre&gt;void setup() {
+  Serial.begin(9600);
+  pinMode(ledPin, OUTPUT);
+  pinMode(inPin, INPUT);
+  digitalWrite(ledPin, LOW);
+}&lt;/pre&gt;
+
+&lt;pre&gt;void loop() {
+  volume = digitalRead(inPin);
+  if (volume &gt; 0) {
+    Serial.println(volume);
+    digitalWrite(ledPin, HIGH);
+    delay(50);
+    digitalWrite(ledPin,LOW);
+  }
+}&lt;/pre&gt;
+</description>
+    </item>
     
     <item>
       <title>Kodeklubben, Processing og Ping-Pong (forslag til løsning)</title>
