@@ -8,8 +8,138 @@
     <language>no-nb</language>
     <managingEditor>helge.johnsen@outlook.com (Helge Johnsen)</managingEditor>
     <webMaster>helge.johnsen@outlook.com (Helge Johnsen)</webMaster>
-    <lastBuildDate>Fri, 29 Apr 2016 17:31:44 +0200</lastBuildDate>
+    <lastBuildDate>Sun, 01 May 2016 12:55:46 +0200</lastBuildDate>
     <atom:link href="http://sjsd.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Arduino, lydsensor og 433MHz kommunikasjon</title>
+      <link>http://sjsd.github.io/post/arduino-soundsensor-wireless-433mhz/</link>
+      <pubDate>Sun, 01 May 2016 12:55:46 +0200</pubDate>
+      <author>helge.johnsen@outlook.com (Helge Johnsen)</author>
+      <guid>http://sjsd.github.io/post/arduino-soundsensor-wireless-433mhz/</guid>
+      <description>
+
+&lt;p&gt;Dette er en del av et litt større prosjekt jeg jobber med. Det er ikke sikkert dette er den endelige løsningen for prosjektet mitt, men det er en del av det å prøve å feile.&lt;/p&gt;
+
+&lt;h2 id=&#34;hardware:676f01acec179ba34e80d79ca9ddd325&#34;&gt;Hardware&lt;/h2&gt;
+
+&lt;p&gt;I oppsettet har jeg to Arduinoer, en lydsensor, et sett 433Mhz RF (sender og mottaker) og LED. Jeg har da «krydret» det med å bruke en &lt;a href=&#34;https://www.adafruit.com/products/3039&#34; title=&#34;Adafruit Neopixel stick&#34;&gt;Adafruit Neopixel stick&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Lydsensoren er av en type som kun oppfatter volum og ikke type lyd. Så om det er ei bjelle, en hund som bjeffer eller rock &amp;lsquo;n&amp;rsquo; roll så har det ikke noe å si. Man kan via et potmeter på sensoren justere hvor høy lyden må være for at den skal reagere. Når lydsensoren oppfatter en lyd og den lyden er høy nok så gir den fra seg et digital signal (HIGH eller LOW). Så sensoren blir koblet til en digital inngang på Arduinoen.&lt;/p&gt;
+
+&lt;h2 id=&#34;slik-fungerer-det:676f01acec179ba34e80d79ca9ddd325&#34;&gt;Slik fungerer det&lt;/h2&gt;
+
+&lt;p&gt;Lydsensoren oppfatter en lyd (som er høy nok i volum) og gir fra seg et digitalt signal. Arduinoen oppfatter signalet og sender så en beskjed via 433MHz-senderen.&lt;/p&gt;
+
+&lt;p&gt;433MHz-mottakeren tar imot det trådløse radiosignalet. Arduinoen den er koblet til oppfatter dette og blinker så med LED-lyset/ene.&lt;/p&gt;
+
+&lt;h3 id=&#34;video:676f01acec179ba34e80d79ca9ddd325&#34;&gt;Video&lt;/h3&gt;
+
+&lt;p&gt;Her er en kort video som viser hvordan det fungerer. NB! Dette er første gang jeg spiller inn en video hvor jeg snakker. Den er uforbredt og klønete. Jeg filmet med mobiltelefonen og lyden ble veldig lav. Så husk å skru ned lyden igjen etterpå.&lt;/p&gt;
+
+&lt;iframe width=&#34;768&#34; height=&#34;432&#34; src=&#34;https://www.youtube.com/embed/DW3e2ElfMIw?rel=0&#34; frameborder=&#34;0&#34; allowfullscreen&gt;&lt;/iframe&gt;
+
+&lt;p&gt;I videoen så ser du at jeg har koblet på et LED-lys på koblingsbrettet for senderen. Dette lyser når Arduinoen har mottatt et signal og sender et signal videre. Jeg brukte dette lyset til «feilsøking» når jeg jobbet med det. Det samme har jeg koblet på mottakeren. Et LED-lys som blinker når den mottar et signal.&lt;/p&gt;
+
+&lt;h2 id=&#34;koblinger:676f01acec179ba34e80d79ca9ddd325&#34;&gt;Koblinger&lt;/h2&gt;
+
+&lt;p&gt;Jeg har ingen skjema over koblingene siden Fritzing mangler flere at komponentene jeg har brukt. Så her kommer en kort skriftlig forklaring.&lt;/p&gt;
+
+&lt;h3 id=&#34;lydsensoren:676f01acec179ba34e80d79ca9ddd325&#34;&gt;Lydsensoren&lt;/h3&gt;
+
+&lt;p&gt;Lydsensoren er koblet til 5V, GND og D2.&lt;/p&gt;
+
+&lt;h3 id=&#34;rf-senderen:676f01acec179ba34e80d79ca9ddd325&#34;&gt;RF-senderen&lt;/h3&gt;
+
+&lt;p&gt;RF-senderen er koblet til 5V, GND og D12.&lt;/p&gt;
+
+&lt;h3 id=&#34;led-på-arduino-en-som-sender:676f01acec179ba34e80d79ca9ddd325&#34;&gt;LED på Arduino en som sender&lt;/h3&gt;
+
+&lt;p&gt;LED er koblet til D7 og GND med en motstand i mellom.&lt;/p&gt;
+
+&lt;h3 id=&#34;rf-mottaker:676f01acec179ba34e80d79ca9ddd325&#34;&gt;RF-mottaker&lt;/h3&gt;
+
+&lt;p&gt;RD-mottaker er koblet til 5V, GND og D11.&lt;/p&gt;
+
+&lt;h3 id=&#34;led-på-arduino-med-mottaker:676f01acec179ba34e80d79ca9ddd325&#34;&gt;LED på Arduino med mottaker&lt;/h3&gt;
+
+&lt;p&gt;LED er koblet til D13 og GND.&lt;/p&gt;
+
+&lt;h2 id=&#34;kode:676f01acec179ba34e80d79ca9ddd325&#34;&gt;Kode&lt;/h2&gt;
+
+&lt;p&gt;I koden under har jeg forenklet den og fjernet den delen som går på Neopixel. En enkel måte å bruke 433MHz sender og mottaker på er å bruke et bibliotek.&lt;/p&gt;
+
+&lt;h3 id=&#34;radiohead:676f01acec179ba34e80d79ca9ddd325&#34;&gt;RadioHead&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://www.airspayce.com/mikem/arduino/RadioHead/RadioHead-1.41.zip&#34; title=&#34;Last ned &#34;&gt;RadioHead&lt;/a&gt; gjør det enkelt å sette opp og kommunisere med 433MHz-enhetene. Det finnes flere tilsvarende bibliotek. Så du får bruke det du selv føler er best.&lt;/p&gt;
+
+&lt;p&gt;Trenger du en rask innføring så kan jeg anbefale &lt;a href=&#34;http://randomnerdtutorials.com/rf-433mhz-transmitter-receiver-module-with-arduino/&#34; title=&#34;Complete Guide for RF 433MHz Transmitter/Receiver Module With Arduino&#34;&gt;denne guiden&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id=&#34;kode-for-lydsensor-og-sender:676f01acec179ba34e80d79ca9ddd325&#34;&gt;Kode for lydsensor og sender&lt;/h3&gt;
+
+&lt;pre&gt;#include &amp;#60;RH_ASK.h&amp;#62;
+#include &amp;#60;SPI.h&amp;#62;
+RH_ASK driver;
+
+int ledPin = 7;
+int inPin = 2;
+int volume = 0;
+
+void setup() {
+  Serial.begin(9600);
+  pinMode(ledPin, OUTPUT);
+  pinMode(inPin, INPUT);
+  digitalWrite(ledPin, LOW);
+    if (!driver.init())
+         Serial.println(&#34;init failed&#34;);
+}
+
+void loop() {
+  volume = digitalRead(inPin);
+  if (volume &gt; 0) {
+    digitalWrite(ledPin, HIGH);
+    const char *msg = &#34;Hello World!&#34;;
+    driver.send((uint8_t *)msg, strlen(msg));
+    driver.waitPacketSent();
+    delay(1000);
+    digitalWrite(ledPin,LOW);
+  }
+}&lt;/pre&gt;
+
+&lt;h3 id=&#34;kode-for-mottaker-og-neopixel:676f01acec179ba34e80d79ca9ddd325&#34;&gt;Kode for mottaker og Neopixel&lt;/h3&gt;
+
+&lt;pre&gt;// Signal inn fra mottaker skal på pin 11.
+#include &amp;#60;RH_ASK.h&amp;#62;
+#include &amp;#60;SPI.h&amp;#62; // Not actualy used but needed to compile
+RH_ASK driver;&lt;/pre&gt;
+
+&lt;pre&gt;// Led for å blink når signal mottatt
+int led = 13;&lt;/pre&gt;
+
+&lt;pre&gt;void setup()
+{
+    Serial.begin(9600); // Debugging only
+    pinMode(led, OUTPUT);
+
+    if (!driver.init())
+         Serial.println(&#34;init failed&#34;);
+}&lt;/pre&gt;
+
+&lt;pre&gt;void loop()
+{
+    uint8_t buf[12];
+    uint8_t buflen = sizeof(buf);
+    
+    if (driver.recv(buf, &amp;buflen))
+    {
+      Serial.println((char*)buf);
+      digitalWrite(led, HIGH);
+      delay(2000);
+      digitalWrite(led, LOW);      
+    }
+}&lt;/pre&gt;
+</description>
+    </item>
     
     <item>
       <title>Arduino lydsensor</title>

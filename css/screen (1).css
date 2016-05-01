@@ -1,0 +1,209 @@
+body {
+	background-color: #f6f6f6;
+}
+
+.container {
+	background-color: #fff;
+	-webkit-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
+	-moz-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
+	box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
+}
+
+.sjsd-mainimage {
+	padding: 0;
+	margin: 0;
+
+	width: 100%;
+	padding-bottom: 56.25%;
+
+	overflow: hidden;
+	background-size: cover;
+	background-position: 50% 50%;
+	background-attachment: fixed;
+}
+
+.sjsd-post {
+	padding-top: 40px;
+	padding-bottom: 26px;
+}
+
+.sjsd-post h1 {
+	font-family: Georgia, serif;
+	font-size: 40px;
+	font-weight: 200;
+	color: rgb(20, 24, 35);
+	line-height: 48px;
+	margin: 0 0 12px 0;
+}
+
+.sjsd-post h2,
+.sjsd-post h3,
+.sjsd-post h4,
+.sjsd-post h5,
+.sjsd-post h6,
+.sjsd-post p,
+.sjsd-post li {
+	font-family: Georgia, serif;
+	font-weight: normal;
+	color: rgb(20, 24, 35);
+	margin-bottom: 14px;
+}
+
+.sjsd-post .byline {
+	color: rgb(145, 151, 163);
+	font-family: helvetica, arial, sans-serif;
+	font-size: 12px;
+	line-height: 1.5;
+	text-transform: uppercase;
+	margin-bottom: 40px;
+}
+
+.sjsd-post h2 {
+	font-size: 36px;
+	line-height: 38px;
+}
+
+.sjsd-post h3 {
+	font-size: 28px;
+	line-height: 32px;
+}
+
+.sjsd-post h4,
+.sjsd-post h5,
+.sjsd-post h6 {
+	font-size: 22px;
+	line-height: 26px;
+}
+
+.sjsd-post p {
+	font-size: 17px;
+	line-height: 28px;
+	margin-bottom: 28px;
+}
+
+.sjsd-post li {
+	font-size: 17px;
+	line-height: 28px;
+}
+
+.sjsd-post ul,
+.sjsd-post ol {
+	margin-bottom: 28px;
+}
+
+.sjsd-post img {
+	max-width: 100%;
+	width: auto;
+	height: auto;
+	display: block;
+}
+
+.sjsd-post figure {
+	width: 100%;
+	height: auto;
+	display: block;
+}
+
+.sjsd-post figure img {
+	width: 100%;
+	height: auto;
+	display: block;
+}
+
+.sjsd-post table {
+    border-collapse: collapse;
+    border-spacing: 0;	
+}
+
+.sjsd-post table {
+    border-radius: 0;
+    margin-bottom: 1rem;
+    width: 100%;
+}
+.sjsd-post thead,
+.sjsd-post tbody,
+.sjsd-post tfoot {
+    background-color: #fefefe;
+    border: 1px solid #f1f1f1;
+}
+.sjsd-post caption {
+    font-weight: bold;
+    padding: 0.5rem 0.625rem 0.625rem;
+}
+.sjsd-post thead,
+.sjsd-post tfoot {
+    background: #f8f8f8 none repeat scroll 0 0;
+    color: #0a0a0a;
+}
+.sjsd-post thead tr,
+.sjsd-post tfoot tr {
+    background: transparent none repeat scroll 0 0;
+}
+.sjsd-post thead th,
+.sjsd-post thead td,
+.sjsd-post tfoot th,
+.sjsd-post tfoot td {
+    font-weight: bold;
+    padding: 0.5rem 0.625rem 0.625rem;
+    text-align: left;
+}
+.sjsd-post tbody tr:nth-child(2n) {
+    background-color: #f1f1f1;
+}
+.sjsd-post tbody th,
+.sjsd-post tbody td {
+    padding: 0.5rem 0.625rem 0.625rem;
+}
+
+.sjsd-post-image {
+	padding: 0;
+	text-align: center;
+}
+
+.sjsd-post-image h4,
+.sjsd-post-image p {
+	display: inline-block;
+	color: rgb(145, 151, 163);
+	font-family: Georgia, serif;
+	font-size: 14px;
+	line-height: 18px;
+}
+
+
+/**/
+.sjsd-posts {
+	padding: 40px 0;
+}
+
+.sjsd-posts h1 {
+	font-family: Georgia, serif;
+	font-size: 40px;
+	font-weight: 200;
+	color: rgb(20, 24, 35);
+	line-height: 48px;
+	margin: 0 0 12px 0;
+}
+
+.sjsd-posts ul,
+.sjsd-posts li {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+
+	font-size: 16px;
+	line-height: 1.6;
+}
+
+/* Some old fun from Wordpress */
+.block-message {
+	display: block;
+	font-size: 17px;
+	line-height: 28px;
+	margin-bottom: 28px;
+
+	border: 1px solid rgba(10, 10, 10, 0.25);
+	border-radius: 0;
+	padding: 16px;
+
+	background-color: #ebebeb;
+}
