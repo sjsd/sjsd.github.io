@@ -3,8 +3,13 @@
   
   <url>
     <loc>http://sjsd.github.io/</loc>
-    <lastmod>2016-05-01T12:55:46+02:00</lastmod>
+    <lastmod>2016-05-03T16:38:45+02:00</lastmod>
     <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://sjsd.github.io/post/arduino-voltage-sensor/</loc>
+    <lastmod>2016-05-03T16:38:45+02:00</lastmod>
   </url>
   
   <url>

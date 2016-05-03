@@ -8,8 +8,53 @@
     <language>no-nb</language>
     <managingEditor>helge.johnsen@outlook.com (Helge Johnsen)</managingEditor>
     <webMaster>helge.johnsen@outlook.com (Helge Johnsen)</webMaster>
-    <lastBuildDate>Sun, 01 May 2016 12:55:46 +0200</lastBuildDate>
+    <lastBuildDate>Tue, 03 May 2016 16:38:45 +0200</lastBuildDate>
     <atom:link href="http://sjsd.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Arduino voltage sensor</title>
+      <link>http://sjsd.github.io/post/arduino-voltage-sensor/</link>
+      <pubDate>Tue, 03 May 2016 16:38:45 +0200</pubDate>
+      <author>helge.johnsen@outlook.com (Helge Johnsen)</author>
+      <guid>http://sjsd.github.io/post/arduino-voltage-sensor/</guid>
+      <description>
+
+&lt;p&gt;Dette innlegget er mest en refareanse / et notat til meg selv for en «voltage sensor» for Arduino. Men siden jeg har funnet / endret koden så kan jeg like gjerne dele den med andre.&lt;/p&gt;
+
+&lt;h2 id=&#34;kode:f128d8f4342e814dd1d4824915b722d3&#34;&gt;Kode&lt;/h2&gt;
+
+&lt;pre&gt;
+#include &amp;lt;Wire.h&amp;gt;
+int analogValue;
+float voltageValue;
+void setup() {
+    Serial.begin(9600);
+    Serial.println(&#34;http://sjsd.github.io/post/arduino-voltage-sensor/&#34;);
+    Serial.println(&#34;Voltage: 0 ~ 25&#34;);
+}
+void loop() {
+    float temp;
+    analogValue=analogRead(0);
+    temp=analogValue/4.092;
+    voltageValue=(temp/10);
+    Serial.println(voltageValue);
+    delay(1000);
+}
+&lt;/pre&gt;
+
+&lt;h2 id=&#34;oppkobling:f128d8f4342e814dd1d4824915b722d3&#34;&gt;Oppkobling&lt;/h2&gt;
+
+&lt;p&gt;Pluss (+) på sensor kobles til 5V. Minus (-) på sensor kobles til GND. Utgang (S) på sensor kobles til A0.&lt;/p&gt;
+
+&lt;h2 id=&#34;spesifikasjoner:f128d8f4342e814dd1d4824915b722d3&#34;&gt;Spesifikasjoner&lt;/h2&gt;
+
+&lt;p&gt;Spesfikasjonene er hentet fra &lt;a href=&#34;http://www.ebay.com/itm/151850577824?_trksid=p2060353.m2749.l2649&amp;ssPageName=STRK%3AMEBIDX%3AIT&#34; title=&#34;Voltage Sensor for Arduino DC0-25V with Code Free Shipping&#34;&gt;produktsiden på eBay&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Voltage input range: DC0-25V&lt;br /&gt;
+Voltage detection range: DC0.02445V-25V&lt;br /&gt;
+Voltage Analog Resolution: 0.00489V&lt;br /&gt;&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Arduino, lydsensor og 433MHz kommunikasjon</title>

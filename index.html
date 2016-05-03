@@ -27,6 +27,10 @@
 <main class="posts">
   <article class="post">
     
+    <h1><a href="http://sjsd.github.io/post/arduino-voltage-sensor/">Arduino voltage sensor</a></h1>
+    <p>Dette innlegget er mest en refareanse / et notat til meg selv for en «voltage sensor» for Arduino. Men siden jeg har funnet / endret koden så kan jeg like gjerne dele den med andre. Kode #include &lt;Wire.h&gt; int analogValue; float voltageValue; void setup() { Serial.begin(9600); Serial.println("http://sjsd.github.io/post/arduino-voltage-sensor/"); Serial.println("Voltage: 0 ~ 25"); } void loop() { float temp; analogValue=analogRead(0); temp=analogValue/4.092; voltageValue=(temp/10); Serial.println(voltageValue); delay(1000); } Oppkobling Pluss (+) på sensor kobles til 5V.</p>
+    <p class="small"><a href="http://sjsd.github.io/post/arduino-voltage-sensor/">Read More »</a></p>
+    
     <h1><a href="http://sjsd.github.io/post/arduino-soundsensor-wireless-433mhz/">Arduino, lydsensor og 433MHz kommunikasjon</a></h1>
     <p>Dette er en del av et litt større prosjekt jeg jobber med. Det er ikke sikkert dette er den endelige løsningen for prosjektet mitt, men det er en del av det å prøve å feile. Hardware I oppsettet har jeg to Arduinoer, en lydsensor, et sett 433Mhz RF (sender og mottaker) og LED. Jeg har da «krydret» det med å bruke en Adafruit Neopixel stick. Lydsensoren er av en type som kun oppfatter volum og ikke type lyd.</p>
     <p class="small"><a href="http://sjsd.github.io/post/arduino-soundsensor-wireless-433mhz/">Read More »</a></p>
