@@ -1,0 +1,14 @@
+/* TEAM */
+Developer: Helge Johnsen.
+Site: www.helgejohnsen.no
+Twitter: @sjsd
+Location: Norway.
+
+/* THANKS */
+Name: Cosmin Popovici, https://github.com/cossssmin/gridsome-starter-bleda
+
+/* SITE */
+Last update: now and then
+Standards: HTML, JS, CSS
+Components: Vue.js, TailwindCSS
+Software: Vue.js, Gridsome, Strapi, VS Code
